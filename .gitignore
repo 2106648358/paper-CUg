@@ -1,0 +1,39 @@
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.xdv
+*.nav
+*.snm
+*.vrb
+
+# PDF (build output)
+thesis.pdf
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Font files (not needed for distribution)
+*.ttf
+*.ttc
+
+# Backup & temp
+bak/
+*.bak
+*.bak[0-9]
+
+# Large external files
+王小捷博士论文.pdf
+thesis_text.txt
+
+# OS
+Thumbs.db
+.DS_Store
