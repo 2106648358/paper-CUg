@@ -43,3 +43,24 @@
 《巴黎奥运会的创意渊源、“破墙”价值与时代启示》
 
 《入奥视域下体育舞蹈竞赛规则优化研究——与冰上舞蹈竞赛规则借鉴分析》
+
+
+https://doi.org/10.1002/j.1538-7305.1948.tb01338.x  
+
+C. E. Shannon, "A mathematical theory of communication," in The Bell System Technical Journal, vol. 27, no. 3, pp. 379-423, July 1948, doi: 10.1002/j.1538-7305.1948.tb01338.x.
+
+@ARTICLE{6773024,
+  author={Shannon, C. E.},
+  journal={The Bell System Technical Journal}, 
+  title={A mathematical theory of communication}, 
+  year={1948},
+  volume={27},
+  number={3},
+  pages={379-423},
+  keywords={},
+  doi={10.1002/j.1538-7305.1948.tb01338.x}}
+
+
+
+https://doi.org/10.1037/h0043158
+https://doi.org/10.1109/MCSE.2007.55
