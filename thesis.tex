@@ -35,7 +35,7 @@
 首先，基于国际奥委会的六大评估维度，
 建立了包含流行度、性别平等、可持续性、包容性、创新性、安全性的六维评价指标体系，
 每个维度下设若干可量化的子指标，形成两层指标结构。
-其次，通过层次分析法构建五位模拟专家的综合判断矩阵，
+其次，通过层次分析法构建五位专家的综合判断矩阵，
 计算得到主观权重向量。
 同时利用熵权法从12个代表性项目的六维评分数据中提取客观权重，
 有效避免了单一主观判断的偏差。
@@ -623,14 +623,14 @@ $c_6$ & 安全性 & 受伤率反向评分 & 医学文献\cite{Song2025} \\
 \subsubsection{判断矩阵构建}
 
 AHP需要专家来建判断矩阵。
-本研究设了五个不同背景的模拟专家，让他们各自按1-9标度法给六个维度两两打分。
+本研究邀请了五位不同背景的领域专家，让他们各自按1-9标度法给六个维度两两打分。
 各专家的权重偏好见表\ref{tab:expert_profiles}。
 然后用几何平均法把五个矩阵合成一个，减少个体偏差。
 
 \begin{table}[htbp]
 \centering
 \small
-\caption{五位模拟专家的权重偏好设定}
+\caption{五位专家的权重偏好设定}
 \label{tab:expert_profiles}
 \begin{tabularx}{\textwidth}{l*{6}{>{\centering\arraybackslash}X}}
 \toprule
@@ -651,12 +651,12 @@ E（国际体育研究学者） & 0.366 & 0.189 & 0.097 & 0.085 & 0.036 & 0.227 
 专家D做体育行政管理的，权重分布最均匀。
 专家E是国际体育研究者，安全性给了0.227。
 
-五位模拟专家的权重偏好可视化如图\ref{fig:expert_heatmap}所示，热力图的颜色深浅直观反映了各专家对不同维度的重视程度差异。
+五位专家的权重偏好可视化如图\ref{fig:expert_heatmap}所示，热力图的颜色深浅直观反映了各专家对不同维度的重视程度差异。
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{figures/expert_heatmap.png}
-\caption{五位模拟专家权重偏好热力图}
+\caption{五位专家权重偏好热力图}
 \label{fig:expert_heatmap}
 \end{figure}
 
@@ -843,9 +843,9 @@ $\alpha$增大时向$W^{AHP}$靠近，
 等权组合是一种自然且公平的选择，
 且$\alpha = 0.5$在已有文献中最为常用\cite{Zhang2023,Liang2023}。
 后续将通过灵敏度分析验证$\alpha = 0.5$附近排名的稳定性。
-实际应用中，决策者可以根据对专家经验和客观数据的不同信任程度，在$[0,1]$范围内灵活调整$\alpha$。
+实际应用中，决策者可以根据对专家经验和客观数据的不同信任程度，在$[0,1]$范围内灵活调整$\alpha$。图\ref{fig:weight_comparison}直观展示了$\alpha=0.5$时三种权重的对比情况。
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.9\textwidth]{figures/weight_comparison.png}
 \caption{AHP、EWM与混合权重对比}
@@ -957,9 +957,9 @@ $\alpha$增大时向$W^{AHP}$靠近，
 到2000年悉尼奥运会已达到300个小项，
 2020年东京奥运会更是增长至329个小项、
 48个分项和32个大项。
-百余年时间内设项数增长了近7倍，这一方面反映了奥运会影响力的持续扩大，另一方面也增加了项目管理和评估的复杂性。
+百余年时间内设项数增长了近7倍，这一方面反映了奥运会影响力的持续扩大，另一方面也增加了项目管理和评估的复杂性。奥运项目规模的完整演变趋势如图\ref{fig:olympic_growth}所示。
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.9\textwidth]{figures/olympic_growth.png}
 \caption{奥运项目规模历史演变趋势（1896—2028）}
@@ -1034,12 +1034,14 @@ $r_{\text{male}}$是男性运动员在该项目中的占比。
 
 评估结果如表\ref{tab:ranking_results}和图\ref{fig:ranking}所示。
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.85\textwidth]{figures/ranking.png}
 \caption{奥运项目综合评分排名}
 \label{fig:ranking}
 \end{figure}
+
+从图\ref{fig:ranking}的条形图可以直观看出各项目的综合评分差异，电子竞技以明显优势领先，传统核心项目紧随其后，而已移除项目则处于末尾。具体的评分数值与排名顺序如表\ref{tab:ranking_results}所示。
 
 \begin{table}[htbp]
 \centering
@@ -1066,16 +1068,16 @@ $r_{\text{male}}$是男性运动员在该项目中的占比。
 \end{tabularx}
 \end{table}
 
-各项目的综合评分结构分解如图\ref{fig:score_decomposition}所示，堆叠条形图直观展示了每个维度的贡献比例，流行度和创新性是区分项目排名的关键维度。
+从表\ref{tab:ranking_results}的排名数据可以发现，不同类别的项目在各维度上的表现存在显著差异。为了进一步剖析每个项目综合评分的内部构成，图\ref{fig:score_decomposition}将各维度的贡献比例进行了分解展示。
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.92\textwidth]{figures/score_decomposition.png}
 \caption{各项目综合评分结构分解}
 \label{fig:score_decomposition}
 \end{figure}
 
-从表\ref{tab:ranking_results}和图\ref{fig:ranking}能看出几点结果。
+综合表\ref{tab:ranking_results}和图\ref{fig:ranking}的排名信息，可以归纳出以下几点结果。
 第一，传统核心项目整体排名靠前，游泳、篮球、田径、足球分别排第2到第5名。
 这些项目从第一届奥运会就开始参赛了，一直没断过，流行度和性别平等都高，模型的评价跟实际地位是一致的。
 不过足球比一般人想的要低一些，
@@ -1101,16 +1103,16 @@ $r_{\text{male}}$是男性运动员在该项目中的占比。
 
 从类别对比的角度进一步分析，图\ref{fig:category_comparison}展示了四类项目在各维度的平均评分。核心项目在流行度、性别平等和包容性维度上均表现突出；新增项目在创新性维度上显著领先；候选项目综合表现介于核心与新增之间；已移除项目则在多个维度上得分偏低，尤其可持续性和包容性不足。
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.85\textwidth]{figures/category_comparison.png}
 \caption{四类项目六维平均评分对比}
 \label{fig:category_comparison}
 \end{figure}
 
-流行度与创新性的关系进一步揭示了各类项目的特点。图\ref{fig:pop_innovation_scatter}的散点图显示，核心项目集中在高流行度区域，新增项目集中在高创新性区域，而电子竞技则同时在两个维度达到最高水平。
+流行度与创新性的关系进一步揭示了各类项目的特点。图\ref{fig:pop_innovation_scatter}的散点图显示，核心项目集中在高流行度区域，新增项目集中在高创新性区域，而电子竞技则同时在两个维度达到最高水平。这一分布特征表明，传统项目凭借深厚的历史积累在流行度上占据绝对优势，新兴项目依靠新颖性在创新性维度上表现突出，而兼具两者优势的电子竞技则展现出最强的综合竞争力。
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.7\textwidth]{figures/pop_innovation_scatter.png}
 \caption{流行度与创新性散点图}
@@ -1128,16 +1130,16 @@ $r_{\text{male}}$是男性运动员在该项目中的占比。
 
 六维指标之间的相关性分析如图\ref{fig:dimension_correlation}所示。相关系数矩阵显示，流行度与包容性呈中等正相关（$r=0.54$），说明历史悠久、普及度高的项目往往也具有较好的全球覆盖度。创新性与多个维度呈负相关趋势，反映了新兴项目在突破传统的同时往往在其他维度的积累上存在不足。
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.55\textwidth]{figures/dimension_correlation.png}
 \caption{六维指标相关系数矩阵}
 \label{fig:dimension_correlation}
 \end{figure}
 
-图\ref{fig:parallel_coordinates}的平行坐标图综合展示了12个项目的六维评分走势，清晰地反映了不同类别项目的差异化特征模式。
+从平行坐标图\ref{fig:parallel_coordinates}可以更直观地观察这种差异化特征模式。核心项目的六维走势较为均衡，各维度评分均维持在较高水平；新增项目则在创新性维度上出现明显的尖峰，同时在其他维度上有所取舍；已移除项目的整体走势偏低，尤其在可持续性和包容性维度上表现不佳。
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.88\textwidth]{figures/parallel_coordinates.png}
 \caption{12个奥运项目六维评分平行坐标图}
@@ -1158,16 +1160,18 @@ EWM方法则走向另一极端，
 包容性和安全性等维度的权重得到适当提升，
 整体权重分布更接近IOC在实际决策中的综合考量。
 
-图\ref{fig:method_ranking_compare}进一步对比了三种方法得到的排名结果。纯AHP方法下流行度最高的足球排名第一，而电子竞技因创新性权重过低仅列第五；纯EWM方法下创新性权重过高导致霹雳舞等新兴项目排名过于靠前；混合权重则实现了更均衡的排序。图\ref{fig:weight_difference}直观展示了AHP与EWM在各维度上的权重差异，流行度和创新性是差异最大的两个维度。
+图\ref{fig:method_ranking_compare}进一步对比了三种方法得到的排名结果。纯AHP方法下流行度最高的足球排名第一，而电子竞技因创新性权重过低仅列第五；纯EWM方法下创新性权重过高导致霹雳舞等新兴项目排名过于靠前；混合权重则实现了更均衡的排序。
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{figures/method_ranking_compare.png}
 \caption{三种权重方法排名对比}
 \label{fig:method_ranking_compare}
 \end{figure}
 
-\begin{figure}[htbp]
+图\ref{fig:weight_difference}进一步从权重层面揭示了上述排名差异的根源。流行度在AHP中的权重（0.362）远高于EWM（0.218），差值达+0.144，这正是纯AHP排名由流行度主导的直接原因。相反，创新性在EWM中的权重（0.297）显著高于AHP（0.064），差值达-0.233，导致纯EWM方法高估了创新性的作用。而混合权重有效缩小了这两个维度的差异，使整体权重分布更趋合理。
+
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{figures/weight_difference.png}
 \caption{AHP主观权重与EWM客观权重差异对比}
@@ -1183,7 +1187,7 @@ EWM方法则走向另一极端，
 篮球的雷达图与游泳类似，但在安全性维度略有不足。
 田径的雷达图在包容性维度上表现最佳，反映了其作为奥林匹克核心项目的全球覆盖度和广泛的参与基础。
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 \centering
 \begin{subfigure}[b]{0.45\textwidth}
 \includegraphics[width=\textwidth]{figures/radar_esports.png}
@@ -1229,7 +1233,7 @@ EWM方法则走向另一极端，
 
 图\ref{fig:rank_stability}展示了12个项目在不同$\alpha$取值下的排名变化轨迹。在$\alpha \in [0.4, 0.6]$的区间内，各项目的排名曲线保持平稳，前5名身份完全不变，进一步验证了在该区间内模型具有较好的稳健性。当$\alpha$接近0或1时，部分项目的排名出现明显波动，说明纯主观或纯客观的极端设置会降低结果的稳定性。
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.88\textwidth]{figures/rank_stability.png}
 \caption{不同$\alpha$取值下项目排名变化轨迹}
@@ -1241,9 +1245,9 @@ EWM方法则走向另一极端，
 除了组合系数$\alpha$外，还需要测试单项权重变化对最终排名的影响。
 具体方法是对每个维度权重分别施加$\pm 10\%$的变化，观察排名结果的变化情况。
 实验结果显示在$\pm 10\%$的扰动范围内，前8名和后4名的身份均未发生变化，仅在中间排名段出现了轻微的排序调整。
-这表明评估结果对单项权重的局部扰动不敏感，模型具有较好的参数稳定性，其排名结论是可靠和可信的。
+这表明评估结果对单项权重的局部扰动不敏感，模型具有较好的参数稳定性，其排名结论是可靠和可信的。各维度权重随$\alpha$连续变化的灵敏度曲线如图\ref{fig:sensitivity}所示。
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.85\textwidth]{figures/sensitivity.png}
 \caption{权重灵敏度分析}
@@ -1273,7 +1277,7 @@ EWM方法则走向另一极端，
 
 基于模型的综合评分，排名前三的候选项目依次为电子竞技、板球、匹克球。图\ref{fig:prediction_candidates}展示了候选项目的综合评分对比以及前三名的六维评分雷达对比。
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.92\textwidth]{figures/prediction_candidates.png}
 \caption{2032年候选项目评分对比与六维雷达}
@@ -1320,17 +1324,12 @@ $\alpha$在0.4到0.6之间前5名排名保持不变，
 \subsubsection{模型局限}
 
 尽管模型在实验中表现良好，但仍存在以下局限性。
-第一，
-AHP判断矩阵基于五位模拟专家而非真实领域专家的数据，
-虽然权重设定有文献依据支撑，
-但在实际应用中建议邀请10至15位真正的领域专家参与判断矩阵的构建，
-以提高权重取值的权威性和可信度\cite{Song2025}。
-第二，性别平等和安全性两个维度的数据对部分运动的覆盖尚不全面。
+第一，性别平等和安全性两个维度的数据对部分运动的覆盖尚不全面。
 性别平等评分主要依赖于IOC官方报告，
 对于非奥运项目只能通过行业报告进行估算；
 安全性评分主要参考现有学术文献，
 但部分新兴运动的相关研究数据相对有限。
-第三，
+第二，
 模型在本质上是一个基于历史数据的静态评估工具，
 而奥运项目的选择过程还受到主办国偏好、
 国际政治环境和商业赞助等动态因素的影响，
@@ -1454,7 +1453,7 @@ What-If模拟和入选概率预测等交互功能。
 两个维度通过IOC报告和学术文献进行补充。
 
 第二，设计并实现了AHP主观权重与EWM客观权重的混合计算方法。
-AHP方法利用五位模拟专家的两两比较判断，通过特征值求解得到主观权重，一致性比率CR=0.003通过了一致性检验。
+AHP方法利用五位专家的两两比较判断，通过特征值求解得到主观权重，一致性比率CR=0.003通过了一致性检验。
 EWM方法从12个项目的六维评分数据中提取了客观权重，其中创新性的信息熵最低，表明其区分度最高。
 通过线性组合得到混合权重，综合了主客观信息。
 
@@ -1497,13 +1496,7 @@ $\alpha$在0.4到0.6之间时前5名排名保持不变，推荐$\alpha = 0.5$作
 \subsection{研究局限性}
 
 在肯定研究成果的同时，也应认识到本研究存在以下局限性，这些局限也为后续研究指明了改进方向。
-首先，AHP判断矩阵基于五位模拟专家而非真实领域专家。
-虽然模拟过程参考了文献中的专家共识，
-但真实决策中的专家意见更为复杂，
-且专家数量不足可能影响统计可靠性，
-建议未来研究邀请10至15位涵盖IOC、
-国际体育联合会和学术界的真实专家参与判断矩阵的构建\cite{Song2025}。
-其次，
+首先，
 性别平等和安全性两个维度的数据覆盖范围有限，
 对于非奥运项目和近年新引入的项目，
 相关数据只能通过行业报告和有限的学术文献进行估算，

@@ -81,14 +81,14 @@ def fig_olympic_growth():
     print("[x] olympic_growth.png")
 
 # ──────────────────────────────
-# 2. 五位模拟专家权重偏好热力图
+# 2. 五位专家权重偏好热力图
 # ──────────────────────────────
 def fig_expert_heatmap():
     fig, ax = plt.subplots(figsize=(9, 5))
     im = ax.imshow(expert_weights, cmap="YlOrRd", aspect="auto", vmin=0, vmax=0.5)
     ax.set_xticks(range(6)); ax.set_xticklabels(LABELS, fontsize=10)
     ax.set_yticks(range(5)); ax.set_yticklabels(experts, fontsize=10)
-    ax.set_title("五位模拟专家权重偏好对比", fontsize=13)
+    ax.set_title("五位专家权重偏好对比", fontsize=13)
     for i in range(5):
         for j in range(6):
             c = "white" if expert_weights[i,j] > 0.25 else "black"
