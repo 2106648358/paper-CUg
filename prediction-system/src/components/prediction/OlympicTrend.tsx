@@ -37,12 +37,16 @@ export default function OlympicTrend() {
         name: '设项数',
         nameTextStyle: { fontSize: 10, fontFamily: '-apple-system, sans-serif', color: '#87867f' },
         splitLine: { lineStyle: { color: '#f0eee6' } },
+        min: 0,
+        max: 360,
       },
       {
         type: 'value' as const,
         name: '大项数',
         nameTextStyle: { fontSize: 10, fontFamily: '-apple-system, sans-serif', color: '#87867f' },
         splitLine: { show: false },
+        min: 0,
+        max: 36,
       },
     ],
     series: [

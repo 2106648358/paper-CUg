@@ -77,8 +77,11 @@ def fig_olympic_growth():
     l2, lb2 = ax2.get_legend_handles_labels()
     ax1.legend(l1+l2, lb1+lb2, loc="upper left", fontsize=10)
     ax1.set_xlim(1896, 2028); ax1.grid(True, alpha=0.25)
+    # 固定Y轴范围，使双Y轴交叉点稳定可复现
+    ax1.set_ylim(0, 360)
+    ax2.set_ylim(0, 36)
     plt.tight_layout(); plt.savefig(FIGS/"olympic_growth.png", dpi=200, bbox_inches="tight"); plt.close()
-    print("[x] olympic_growth.png")
+    print(f"[x] olympic_growth.png  (ax1 ylim={ax1.get_ylim()}, ax2 ylim={ax2.get_ylim()})")
 
 # ──────────────────────────────
 # 2. 五位专家权重偏好热力图
