@@ -46,39 +46,39 @@ export const AHP_WEIGHTS: Record<string, number> = {
 };
 
 export const EWM_ENTROPY: Record<string, number> = {
-  popularity: 0.868,
+  popularity: 0.902,
   gender_equity: 0.940,
-  sustainability: 0.935,
-  inclusivity: 0.895,
-  innovation: 0.821,
+  sustainability: 0.814,
+  inclusivity: 0.859,
+  innovation: 0.865,
   safety: 0.937,
 };
 
 export const EWM_UTILITY: Record<string, number> = {
-  popularity: 0.132,
+  popularity: 0.098,
   gender_equity: 0.060,
-  sustainability: 0.065,
-  inclusivity: 0.105,
-  innovation: 0.179,
+  sustainability: 0.186,
+  inclusivity: 0.141,
+  innovation: 0.135,
   safety: 0.063,
 };
 
 export const EWM_WEIGHTS: Record<string, number> = {
-  popularity: 0.218,
-  gender_equity: 0.100,
-  sustainability: 0.108,
-  inclusivity: 0.174,
-  innovation: 0.297,
-  safety: 0.104,
+  popularity: 0.144,
+  gender_equity: 0.088,
+  sustainability: 0.272,
+  inclusivity: 0.206,
+  innovation: 0.198,
+  safety: 0.092,
 };
 
 export const HYBRID_WEIGHTS_05: Record<string, number> = {
-  popularity: 0.290,
-  gender_equity: 0.144,
-  sustainability: 0.107,
-  inclusivity: 0.132,
-  innovation: 0.181,
-  safety: 0.146,
+  popularity: 0.253,
+  gender_equity: 0.139,
+  sustainability: 0.189,
+  inclusivity: 0.148,
+  innovation: 0.131,
+  safety: 0.140,
 };
 
 export const DEFAULT_JUDGMENT_MATRIX: number[][] = [
@@ -101,23 +101,23 @@ export const EXPERT_PRIORITIES = [
 export const projects: Project[] = [
   {
     id: 'athletics', name: '田径', nameEn: 'Athletics', category: 'core', yearAdded: 1896,
-    indicators: { popularity: 0.95, gender_equity: 0.88, sustainability: 0.70, inclusivity: 0.88, innovation: 0.35, safety: 0.75 }
+    indicators: { popularity: 0.814, gender_equity: 0.88, sustainability: 0.955, inclusivity: 1.000, innovation: 0.027, safety: 0.75 }
   },
   {
     id: 'swimming', name: '游泳', nameEn: 'Swimming', category: 'core', yearAdded: 1896,
-    indicators: { popularity: 0.92, gender_equity: 0.95, sustainability: 0.60, inclusivity: 0.85, innovation: 0.40, safety: 0.88 }
+    indicators: { popularity: 0.580, gender_equity: 0.95, sustainability: 0.716, inclusivity: 0.432, innovation: 0.418, safety: 0.88 }
   },
   {
     id: 'gymnastics', name: '体操', nameEn: 'Gymnastics', category: 'core', yearAdded: 1896,
-    indicators: { popularity: 0.88, gender_equity: 0.85, sustainability: 0.55, inclusivity: 0.55, innovation: 0.45, safety: 0.62 }
+    indicators: { popularity: 0.638, gender_equity: 0.85, sustainability: 0.935, inclusivity: 0.938, innovation: 0.008, safety: 0.62 }
   },
   {
     id: 'basketball', name: '篮球', nameEn: 'Basketball', category: 'core', yearAdded: 1936,
-    indicators: { popularity: 0.93, gender_equity: 0.92, sustainability: 0.75, inclusivity: 0.82, innovation: 0.50, safety: 0.55 }
+    indicators: { popularity: 0.503, gender_equity: 0.92, sustainability: 0.626, inclusivity: 0.269, innovation: 0.985, safety: 0.55 }
   },
   {
     id: 'football', name: '足球', nameEn: 'Football', category: 'core', yearAdded: 1900,
-    indicators: { popularity: 0.98, gender_equity: 0.80, sustainability: 0.80, inclusivity: 0.90, innovation: 0.40, safety: 0.50 }
+    indicators: { popularity: 0.692, gender_equity: 0.80, sustainability: 0.735, inclusivity: 0.756, innovation: 0.023, safety: 0.50 }
   },
   {
     id: 'tennis', name: '网球', nameEn: 'Tennis', category: 'core', yearAdded: 1896,
@@ -209,19 +209,19 @@ export const projects: Project[] = [
   },
   {
     id: 'sport_climbing', name: '攀岩', nameEn: 'Sport Climbing', category: 'new', yearAdded: 2020,
-    indicators: { popularity: 0.68, gender_equity: 0.90, sustainability: 0.60, inclusivity: 0.35, innovation: 0.95, safety: 0.85 }
+    indicators: { popularity: 0.349, gender_equity: 0.90, sustainability: 0.568, inclusivity: 0.294, innovation: 0.985, safety: 0.85 }
   },
   {
     id: 'surfing', name: '冲浪', nameEn: 'Surfing', category: 'new', yearAdded: 2020,
-    indicators: { popularity: 0.65, gender_equity: 0.90, sustainability: 0.85, inclusivity: 0.25, innovation: 0.90, safety: 0.80 }
+    indicators: { popularity: 0.369, gender_equity: 0.90, sustainability: 0.626, inclusivity: 0.269, innovation: 0.985, safety: 0.80 }
   },
   {
     id: 'skateboarding', name: '滑板', nameEn: 'Skateboarding', category: 'new', yearAdded: 2020,
-    indicators: { popularity: 0.72, gender_equity: 0.90, sustainability: 0.70, inclusivity: 0.40, innovation: 0.98, safety: 0.35 }
+    indicators: { popularity: 0.394, gender_equity: 0.90, sustainability: 0.626, inclusivity: 0.294, innovation: 0.985, safety: 0.35 }
   },
   {
     id: 'breaking', name: '霹雳舞', nameEn: 'Breaking', category: 'new', yearAdded: 2024,
-    indicators: { popularity: 0.55, gender_equity: 0.92, sustainability: 0.90, inclusivity: 0.45, innovation: 1.00, safety: 0.70 }
+    indicators: { popularity: 0.327, gender_equity: 0.92, sustainability: 0.500, inclusivity: 0.110, innovation: 1.000, safety: 0.70 }
   },
   {
     id: 'rugby_sevens', name: '七人制橄榄球', nameEn: 'Rugby Sevens', category: 'new', yearAdded: 2016,
@@ -237,11 +237,11 @@ export const projects: Project[] = [
   },
   {
     id: 'cricket', name: '板球', nameEn: 'Cricket', category: 'candidate', yearAdded: null,
-    indicators: { popularity: 0.85, gender_equity: 0.70, sustainability: 0.60, inclusivity: 0.50, innovation: 0.45, safety: 0.65 }
+    indicators: { popularity: 0.205, gender_equity: 0.70, sustainability: 0.500, inclusivity: 0.247, innovation: 0.023, safety: 0.65 }
   },
   {
     id: 'squash', name: '壁球', nameEn: 'Squash', category: 'candidate', yearAdded: null,
-    indicators: { popularity: 0.50, gender_equity: 0.88, sustainability: 0.70, inclusivity: 0.45, innovation: 0.50, safety: 0.65 }
+    indicators: { popularity: 0.060, gender_equity: 0.88, sustainability: 0.500, inclusivity: 0.150, innovation: 0.500, safety: 0.65 }
   },
   {
     id: 'pickleball', name: '匹克球', nameEn: 'Pickleball', category: 'candidate', yearAdded: null,
@@ -257,11 +257,11 @@ export const projects: Project[] = [
   },
   {
     id: 'karate', name: '空手道', nameEn: 'Karate', category: 'removed', yearAdded: 2020, yearRemoved: 2024,
-    indicators: { popularity: 0.55, gender_equity: 0.90, sustainability: 0.90, inclusivity: 0.50, innovation: 0.75, safety: 0.60 }
+    indicators: { popularity: 0.500, gender_equity: 0.90, sustainability: 0.500, inclusivity: 0.185, innovation: 0.985, safety: 0.60 }
   },
   {
     id: 'baseball_softball', name: '棒球/垒球', nameEn: 'Baseball/Softball', category: 'removed', yearAdded: 1992, yearRemoved: 2008,
-    indicators: { popularity: 0.60, gender_equity: 0.80, sustainability: 0.45, inclusivity: 0.40, innovation: 0.35, safety: 0.80 }
+    indicators: { popularity: 0.445, gender_equity: 0.80, sustainability: 0.590, inclusivity: 0.296, innovation: 0.377, safety: 0.80 }
   },
 ];
 

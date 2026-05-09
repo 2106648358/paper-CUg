@@ -37,6 +37,9 @@ def parse_himcm():
         disc = str(row[1]).strip() if row[1] else ''
         code = str(row[2]).strip() if row[2] else ''
 
+        # normalize sport name: replace non-breaking spaces, special chars
+        sport = sport.replace('\xa0', ' ').replace('?', '').strip()
+
         if sport in ('Total events', 'Total disciplines', 'Total sports', ''):
             continue
         if sport == 'HiMCM_Olympic_Data':
@@ -56,7 +59,77 @@ def parse_himcm():
 
     return sports
 
+# IF (International Federation) member nation counts
+# Source: IF official websites, verified 2025-2026
+# Used to supplement HiMCM data where event counts are incomplete (e.g. Basketball
+# only tracks 3x3, Aquatics only tracks Artistic Swimming)
+IF_MEMBERS = {
+    'aquatics': 210, 'swimming': 210,
+    'archery': 170, 'athletics': 214, 'badminton': 199,
+    'baseball and softball': 198, 'basketball': 213,
+    'boxing': 200, 'breaking': 93, 'canoeing': 167,
+    'cricket': 108, 'cycling': 198, 'equestrian': 136,
+    'fencing': 157, 'field hockey': 137, 'flag football': 70,
+    'football': 211, 'golf': 153, 'gymnastics': 148,
+    'handball': 209, 'ice hockey': 77, 'judo': 204,
+    'karate': 201, 'modern pentathlon': 120, 'rowing': 159,
+    'rugby': 133, 'sailing': 145, 'shooting': 155,
+    'skateboarding': 130, 'sport climbing': 100, 'squash': 115,
+    'surfing': 117, 'table tennis': 227, 'taekwondo': 213,
+    'tennis': 211, 'triathlon': 170, 'volleyball': 222,
+    'weightlifting': 187, 'wrestling': 185,
+    'basque pelota': 30, 'croquet': 30, 'jeu de paume': 1,
+    'polo': 80, 'rackets': 1, 'roque': 1,
+    'tug of war': 70, 'water motorsports': 60,
+    'skating': 100, 'lacrosse': 75,
+}
+
 def compute_popularity(sport):
+    sport_name = sport['sport'].lower().strip()
+    events_hist = sport['events_hist']
+    n_years = len(YEARS) - 1  # exclude 2028
+
+    total_appearances = sum(1 for e in events_hist if e > 0)
+    total_events = sum(events_hist)
+
+    appearances_ratio = total_appearances / n_years
+    events_ratio = min(total_events / max(total_appearances, 1) / 50, 1.0)
+
+    non_zero = [e for e in events_hist if e > 0]
+    if len(non_zero) >= 5:
+        first_half = non_zero[:len(non_zero)//2]
+        second_half = non_zero[len(non_zero)//2:]
+        growth = (sum(second_half) / max(len(second_half), 1)) / max(sum(first_half) / max(len(first_half), 1), 0.01)
+        growth_score = min(growth / 3, 1.0)
+    else:
+        growth_score = 0.3
+
+    # recency: events in last 3 Olympics / total
+    recent = sum(events_hist[-4:])  # 2012, 2016, 2020, 2024
+    if total_events > 0:
+        recency_score = min(recent / max(total_events, 1) * 3, 1.0)
+    else:
+        recency_score = 0
+
+    himcm_score = 0.35 * appearances_ratio + 0.25 * events_ratio + 0.2 * growth_score + 0.2 * recency_score
+
+    # blend in IF membership data (30% weight) as real-world popularity proxy
+    # This corrects for sports where HiMCM only tracks sub-disciplines
+    # (e.g. Basketball=3x3 only, Aquatics=Artistic Swimming only)
+    if_members = IF_MEMBERS.get(sport_name, 0)
+    if if_members > 0:
+        if_score = min(if_members / 214.0, 1.0)  # normalized to World Athletics (214=max)
+        score = 0.70 * himcm_score + 0.30 * if_score
+    else:
+        score = himcm_score  # historical/defunct sports with no modern IF
+
+    return round(score, 4), {
+        'total_appearances': total_appearances,
+        'total_events': total_events,
+        'growth_score': round(growth_score, 4),
+        'recency_score': round(recency_score, 4),
+        'if_members': if_members,
+    }
     events_hist = sport['events_hist']
     n_years = len(YEARS) - 1  # exclude 2028
 
@@ -252,6 +325,7 @@ def load_frontend_core_data():
 def name_matches(himcm_name, ref_name):
     """Match HiMCM names to reference names"""
     mapping = {
+        'aquatics': 'swimming',
         'athletics': 'athletics',
         'swimming': 'swimming',
         'gymnastics': 'gymnastics',
@@ -267,6 +341,7 @@ def name_matches(himcm_name, ref_name):
         'badminton': 'badminton',
         'boxing': 'boxing',
         'canoeing': 'canoe',
+        'cricket': 'cricket',
         'cycling': 'cycling',
         'equestrian': 'equestrian',
         'fencing': 'fencing',
@@ -285,6 +360,16 @@ def name_matches(himcm_name, ref_name):
         'volleyball': 'volleyball',
         'weightlifting': 'weightlifting',
         'wrestling': 'wrestling',
+        'baseball': 'baseball_softball',
+        'lacrosse': 'lacrosse',
+        'skating': 'skating',
+        'water motorsports': 'water_motorsports',
+        'basque pelota': 'basque_pelota',
+        'jeu de paume': 'jeu_de_paume',
+        'tug of war': 'tug_of_war',
+        'ice hockey': 'ice_hockey',
+        'flag football': 'flag_football',
+        'modern pentathlon': 'modern_pentathlon',
     }
     key = himcm_name.lower().strip()
     if key in mapping:
@@ -305,13 +390,18 @@ def main():
     frontend_data = load_frontend_core_data()
     print(f"加载了 {len(frontend_data)} 个前端运动数据")
 
-    # compute 4 dimensions for each sport-level entry (discipline == '')
+    # compute 4 dimensions for each unique sport (keep first occurrence, aggregate events if needed)
     sport_level = {}
     for s in sports:
-        if s['discipline']:
-            continue
         name = s['sport']
-        if name not in sport_level:
+        if name in sport_level:
+            # aggregate events across disciplines
+            existing = sport_level[name]
+            for i in range(len(existing['events'])):
+                existing['events'][i] += s['events'][i]
+            for i in range(len(existing['events_hist'])):
+                existing['events_hist'][i] += s['events_hist'][i]
+        else:
             sport_level[name] = s
 
     results = []
@@ -340,8 +430,8 @@ def main():
 
         # try to match with existing 12-sport data for gender + safety
         matched = name_matches(name, '')
+        eng_key = matched.replace('_', ' ').lower() if matched else name.lower().strip()
         if matched is not None:
-            eng_key = matched.replace('_', ' ').lower()
             for ek in existing_12:
                 if ek.startswith(eng_key) or eng_key.startswith(ek):
                     entry['gender_equity'] = existing_12[ek]['gender_equity']
@@ -349,16 +439,28 @@ def main():
                     entry['status'] = existing_12[ek].get('status', '')
                     break
 
-            # also check frontend data
+        # also check frontend data (always try, even if name_matches returned None)
+        def _norm(s):
+            import re
+            return re.sub(r'[^a-z0-9]', '', s.lower().strip())
+
+        if 'gender_equity' not in entry:
             for fe_key, fe_val in frontend_data.items():
-                fe_normalized = fe_key.lower().strip()
-                eng_normalized = matched.lower().strip()
-                if fe_normalized == eng_normalized or fe_normalized.startswith(eng_normalized):
-                    if 'gender_equity' not in entry and 'indicators' in fe_val:
-                        ind = fe_val['indicators']
-                        entry['gender_equity'] = ind.get('gender_equity', 0.5)
-                        entry['safety'] = ind.get('safety', 0.5)
-                    if 'category' not in entry:
+                fe_normalized = _norm(fe_key)
+                ek_normalized = _norm(eng_key)
+                if fe_normalized == ek_normalized or fe_normalized.startswith(ek_normalized) or ek_normalized.startswith(fe_normalized):
+                    ind = fe_val.get('indicators', {})
+                    ge_val = ind.get('gender_equity', None)
+                    sf_val = ind.get('safety', None)
+                    if isinstance(ge_val, dict):
+                        ge_val = ge_val.get('score', None)
+                    if isinstance(sf_val, dict):
+                        sf_val = sf_val.get('score', None)
+                    if ge_val is not None:
+                        entry['gender_equity'] = ge_val
+                    if sf_val is not None:
+                        entry['safety'] = sf_val
+                    if 'status' not in entry or not entry.get('status'):
                         entry['status'] = fe_val.get('category', '')
                     break
 

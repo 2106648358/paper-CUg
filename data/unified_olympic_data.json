@@ -2,7 +2,7 @@
   "metadata": {
     "version": "3.0",
     "source": "HiMCM_Olympic_Data.xlsx",
-    "sports_count": 34,
+    "sports_count": 48,
     "dimensions": [
       "popularity",
       "sustainability",
@@ -20,7 +20,7 @@
       "name": "Athletics",
       "code": "ATH",
       "scores": {
-        "popularity": 0.7347,
+        "popularity": 0.8143,
         "sustainability": 0.9547,
         "inclusivity": 1.0,
         "innovation": 0.0268
@@ -30,7 +30,8 @@
           "total_appearances": 31,
           "total_events": 1095,
           "growth_score": 0.5201,
-          "recency_score": 0.5205
+          "recency_score": 0.5205,
+          "if_members": 214
         },
         "sustainability": {
           "continuity": 1.0,
@@ -59,7 +60,7 @@
       "name": "Weightlifting",
       "code": "WLF",
       "scores": {
-        "popularity": 0.649,
+        "popularity": 0.7165,
         "sustainability": 0.7644,
         "inclusivity": 0.9085,
         "innovation": 0.0077
@@ -69,7 +70,8 @@
           "total_appearances": 28,
           "total_events": 239,
           "growth_score": 0.7731,
-          "recency_score": 0.6778
+          "recency_score": 0.6778,
+          "if_members": 187
         },
         "sustainability": {
           "continuity": 0.8065,
@@ -95,127 +97,10 @@
       "status": "core"
     },
     {
-      "name": "Fencing",
-      "code": "FEN",
-      "scores": {
-        "popularity": 0.5952,
-        "sustainability": 0.955,
-        "inclusivity": 0.9,
-        "innovation": 0.0577
-      },
-      "details": {
-        "popularity": {
-          "total_appearances": 31,
-          "total_events": 243,
-          "growth_score": 0.4868,
-          "recency_score": 0.5432
-        },
-        "sustainability": {
-          "continuity": 1.0,
-          "stability": 0.8713,
-          "resilience": 0.0,
-          "max_consecutive": 31,
-          "gaps": 0
-        },
-        "inclusivity": {
-          "appearances_ratio": 1.0,
-          "event_breadth": 0.6,
-          "era_score": 1.0,
-          "future_included": 1
-        },
-        "innovation": {
-          "first_year": 1896,
-          "recency": 0.0154,
-          "change_rate": 0.1
-        }
-      },
-      "gender_equity": 0.88,
-      "safety": 0.8,
-      "status": "core"
-    },
-    {
-      "name": "Shooting",
-      "code": "SHO",
-      "scores": {
-        "popularity": 0.5878,
-        "sustainability": 0.653,
-        "inclusivity": 0.9806,
-        "innovation": 0.0077
-      },
-      "details": {
-        "popularity": {
-          "total_appearances": 29,
-          "total_events": 318,
-          "growth_score": 0.4618,
-          "recency_score": 0.566
-        },
-        "sustainability": {
-          "continuity": 0.7097,
-          "stability": 0.7689,
-          "resilience": 0.3,
-          "max_consecutive": 22,
-          "gaps": 2
-        },
-        "inclusivity": {
-          "appearances_ratio": 0.9355,
-          "event_breadth": 1.0,
-          "era_score": 1.0,
-          "future_included": 1
-        },
-        "innovation": {
-          "first_year": 1896,
-          "recency": 0.0154,
-          "change_rate": -0.0625
-        }
-      },
-      "gender_equity": 0.85,
-      "safety": 0.9,
-      "status": "core"
-    },
-    {
-      "name": "Sailing",
-      "code": "SAL",
-      "scores": {
-        "popularity": 0.5761,
-        "sustainability": 0.7978,
-        "inclusivity": 0.896,
-        "innovation": 0.0231
-      },
-      "details": {
-        "popularity": {
-          "total_appearances": 28,
-          "total_events": 205,
-          "growth_score": 0.5316,
-          "recency_score": 0.5854
-        },
-        "sustainability": {
-          "continuity": 0.871,
-          "stability": 0.784,
-          "resilience": 0.15,
-          "max_consecutive": 27,
-          "gaps": 1
-        },
-        "inclusivity": {
-          "appearances_ratio": 0.9032,
-          "event_breadth": 0.7,
-          "era_score": 1.0,
-          "future_included": 1
-        },
-        "innovation": {
-          "first_year": 1900,
-          "recency": 0.0462,
-          "change_rate": -0.0698
-        }
-      },
-      "gender_equity": 0.88,
-      "safety": 0.75,
-      "status": "core"
-    },
-    {
       "name": "Football",
       "code": "FBL",
       "scores": {
-        "popularity": 0.5658,
+        "popularity": 0.6918,
         "sustainability": 0.7347,
         "inclusivity": 0.7556,
         "innovation": 0.0231
@@ -225,7 +110,8 @@
           "total_appearances": 29,
           "total_events": 37,
           "growth_score": 0.5111,
-          "recency_score": 0.6486
+          "recency_score": 0.6486,
+          "if_members": 211
         },
         "sustainability": {
           "continuity": 0.6774,
@@ -254,7 +140,7 @@
       "name": "Boxing",
       "code": "BOX",
       "scores": {
-        "popularity": 0.5617,
+        "popularity": 0.6736,
         "sustainability": 0.7371,
         "inclusivity": 0.7238,
         "innovation": 0.1037
@@ -264,7 +150,8 @@
           "total_appearances": 27,
           "total_events": 278,
           "growth_score": 0.4657,
-          "recency_score": 0.5612
+          "recency_score": 0.5612,
+          "if_members": 200
         },
         "sustainability": {
           "continuity": 0.8065,
@@ -293,7 +180,7 @@
       "name": "Judo",
       "code": "JUD",
       "scores": {
-        "popularity": 0.5505,
+        "popularity": 0.6713,
         "sustainability": 0.6444,
         "inclusivity": 0.6327,
         "innovation": 0.2871
@@ -303,7 +190,8 @@
           "total_appearances": 15,
           "total_events": 167,
           "growth_score": 0.6274,
-          "recency_score": 1.0
+          "recency_score": 1.0,
+          "if_members": 204
         },
         "sustainability": {
           "continuity": 0.4516,
@@ -329,87 +217,210 @@
       "status": "core"
     },
     {
-      "name": "Field hockey",
-      "code": "HOC",
+      "name": "Wrestling",
+      "code": "WRF",
       "scores": {
-        "popularity": 0.5476,
-        "sustainability": 0.6877,
-        "inclusivity": 0.7169,
-        "innovation": 0.0538
+        "popularity": 0.6546,
+        "sustainability": 0.7338,
+        "inclusivity": 0.8613,
+        "innovation": 0.126
       },
       "details": {
         "popularity": {
-          "total_appearances": 25,
-          "total_events": 37,
-          "growth_score": 0.641,
-          "recency_score": 0.6486
+          "total_appearances": 27,
+          "total_events": 240,
+          "growth_score": 0.4892,
+          "recency_score": 0.5875,
+          "if_members": 185
         },
         "sustainability": {
-          "continuity": 0.7419,
-          "stability": 0.8312,
+          "continuity": 0.8065,
+          "stability": 0.8892,
           "resilience": 0.3,
-          "max_consecutive": 23,
+          "max_consecutive": 25,
           "gaps": 2
         },
         "inclusivity": {
-          "appearances_ratio": 0.8065,
-          "event_breadth": 0.1,
+          "appearances_ratio": 0.871,
+          "event_breadth": 0.6,
           "era_score": 1.0,
           "future_included": 1
         },
         "innovation": {
-          "first_year": 1908,
-          "recency": 0.1077,
-          "change_rate": 0.0
+          "first_year": 1904,
+          "recency": 0.0769,
+          "change_rate": 0.175
         }
       },
-      "gender_equity": 0.88,
-      "safety": 0.55,
+      "gender_equity": 0.6,
+      "safety": 0.45,
       "status": "core"
     },
     {
-      "name": "Modern Pentathlon",
-      "code": "MPN",
+      "name": "Gymnastics",
+      "code": "GAR",
       "scores": {
-        "popularity": 0.4988,
-        "sustainability": 0.8878,
-        "inclusivity": 0.7266,
-        "innovation": 0.1407
+        "popularity": 0.6384,
+        "sustainability": 0.9349,
+        "inclusivity": 0.9375,
+        "innovation": 0.0077
       },
       "details": {
         "popularity": {
-          "total_appearances": 26,
-          "total_events": 44,
-          "growth_score": 0.4386,
-          "recency_score": 0.5455
+          "total_appearances": 31,
+          "total_events": 348,
+          "growth_score": 0.5645,
+          "recency_score": 0.4828,
+          "if_members": 148
         },
         "sustainability": {
-          "continuity": 0.8387,
-          "stability": 0.8636,
+          "continuity": 1.0,
+          "stability": 0.8139,
           "resilience": 0.0,
-          "max_consecutive": 26,
+          "max_consecutive": 31,
           "gaps": 0
         },
         "inclusivity": {
-          "appearances_ratio": 0.8387,
-          "event_breadth": 0.1,
+          "appearances_ratio": 1.0,
+          "event_breadth": 0.75,
           "era_score": 1.0,
           "future_included": 1
         },
         "innovation": {
-          "first_year": 1912,
-          "recency": 0.1385,
-          "change_rate": 0.1429
+          "first_year": 1896,
+          "recency": 0.0154,
+          "change_rate": 0.0
         }
       },
-      "gender_equity": null,
-      "safety": null
+      "gender_equity": 0.85,
+      "safety": 0.62,
+      "status": "core"
+    },
+    {
+      "name": "Fencing",
+      "code": "FEN",
+      "scores": {
+        "popularity": 0.6367,
+        "sustainability": 0.955,
+        "inclusivity": 0.9,
+        "innovation": 0.0577
+      },
+      "details": {
+        "popularity": {
+          "total_appearances": 31,
+          "total_events": 243,
+          "growth_score": 0.4868,
+          "recency_score": 0.5432,
+          "if_members": 157
+        },
+        "sustainability": {
+          "continuity": 1.0,
+          "stability": 0.8713,
+          "resilience": 0.0,
+          "max_consecutive": 31,
+          "gaps": 0
+        },
+        "inclusivity": {
+          "appearances_ratio": 1.0,
+          "event_breadth": 0.6,
+          "era_score": 1.0,
+          "future_included": 1
+        },
+        "innovation": {
+          "first_year": 1896,
+          "recency": 0.0154,
+          "change_rate": 0.1
+        }
+      },
+      "gender_equity": 0.88,
+      "safety": 0.8,
+      "status": "core"
+    },
+    {
+      "name": "Shooting",
+      "code": "SHO",
+      "scores": {
+        "popularity": 0.6288,
+        "sustainability": 0.653,
+        "inclusivity": 0.9806,
+        "innovation": 0.0077
+      },
+      "details": {
+        "popularity": {
+          "total_appearances": 29,
+          "total_events": 318,
+          "growth_score": 0.4618,
+          "recency_score": 0.566,
+          "if_members": 155
+        },
+        "sustainability": {
+          "continuity": 0.7097,
+          "stability": 0.7689,
+          "resilience": 0.3,
+          "max_consecutive": 22,
+          "gaps": 2
+        },
+        "inclusivity": {
+          "appearances_ratio": 0.9355,
+          "event_breadth": 1.0,
+          "era_score": 1.0,
+          "future_included": 1
+        },
+        "innovation": {
+          "first_year": 1896,
+          "recency": 0.0154,
+          "change_rate": -0.0625
+        }
+      },
+      "gender_equity": 0.85,
+      "safety": 0.9,
+      "status": "core"
+    },
+    {
+      "name": "Sailing",
+      "code": "SAL",
+      "scores": {
+        "popularity": 0.6066,
+        "sustainability": 0.7978,
+        "inclusivity": 0.896,
+        "innovation": 0.0231
+      },
+      "details": {
+        "popularity": {
+          "total_appearances": 28,
+          "total_events": 205,
+          "growth_score": 0.5316,
+          "recency_score": 0.5854,
+          "if_members": 145
+        },
+        "sustainability": {
+          "continuity": 0.871,
+          "stability": 0.784,
+          "resilience": 0.15,
+          "max_consecutive": 27,
+          "gaps": 1
+        },
+        "inclusivity": {
+          "appearances_ratio": 0.9032,
+          "event_breadth": 0.7,
+          "era_score": 1.0,
+          "future_included": 1
+        },
+        "innovation": {
+          "first_year": 1900,
+          "recency": 0.0462,
+          "change_rate": -0.0698
+        }
+      },
+      "gender_equity": 0.88,
+      "safety": 0.75,
+      "status": "core"
     },
     {
       "name": "Tennis",
       "code": "TEN",
       "scores": {
-        "popularity": 0.4421,
+        "popularity": 0.6053,
         "sustainability": 0.6028,
         "inclusivity": 0.6492,
         "innovation": 0.1327
@@ -419,7 +430,8 @@
           "total_appearances": 18,
           "total_events": 80,
           "growth_score": 0.3333,
-          "recency_score": 0.75
+          "recency_score": 0.75,
+          "if_members": 211
         },
         "sustainability": {
           "continuity": 0.3226,
@@ -445,49 +457,90 @@
       "status": "core"
     },
     {
-      "name": "Archery",
-      "code": "ARC",
+      "name": "Canoeing",
+      "code": "CSP",
       "scores": {
-        "popularity": 0.4331,
-        "sustainability": 0.4756,
-        "inclusivity": 0.6742,
-        "innovation": 0.0856
+        "popularity": 0.5897,
+        "sustainability": 0.8377,
+        "inclusivity": 0.7282,
+        "innovation": 0.1615
       },
       "details": {
         "popularity": {
-          "total_appearances": 18,
-          "total_events": 76,
-          "growth_score": 0.3333,
-          "recency_score": 0.7105
+          "total_appearances": 21,
+          "total_events": 216,
+          "growth_score": 0.4581,
+          "recency_score": 0.6389,
+          "if_members": 167
         },
         "sustainability": {
-          "continuity": 0.4516,
-          "stability": 0.7713,
-          "resilience": 0.45,
-          "max_consecutive": 14,
-          "gaps": 3
+          "continuity": 0.6774,
+          "stability": 0.905,
+          "resilience": 0.0,
+          "max_consecutive": 21,
+          "gaps": 0
         },
         "inclusivity": {
-          "appearances_ratio": 0.5806,
-          "event_breadth": 0.5,
+          "appearances_ratio": 0.6774,
+          "event_breadth": 0.6,
           "era_score": 0.75,
           "future_included": 1
         },
         "innovation": {
-          "first_year": 1900,
-          "recency": 0.0462,
-          "change_rate": 0.125
+          "first_year": 1936,
+          "recency": 0.3231,
+          "change_rate": -0.0417
+        }
+      },
+      "gender_equity": 0.85,
+      "safety": 0.65,
+      "status": "core"
+    },
+    {
+      "name": "Handball",
+      "code": "HBL",
+      "scores": {
+        "popularity": 0.5851,
+        "sustainability": 0.7573,
+        "inclusivity": 0.4605,
+        "innovation": 0.3
+      },
+      "details": {
+        "popularity": {
+          "total_appearances": 14,
+          "total_events": 27,
+          "growth_score": 0.359,
+          "recency_score": 0.8889,
+          "if_members": 209
+        },
+        "sustainability": {
+          "continuity": 0.4516,
+          "stability": 0.9332,
+          "resilience": 0.0,
+          "max_consecutive": 14,
+          "gaps": 0
+        },
+        "inclusivity": {
+          "appearances_ratio": 0.4516,
+          "event_breadth": 0.1,
+          "era_score": 0.5,
+          "future_included": 1
+        },
+        "innovation": {
+          "first_year": 1972,
+          "recency": 0.6,
+          "change_rate": 0.0
         }
       },
       "gender_equity": 0.9,
-      "safety": 0.92,
+      "safety": 0.5,
       "status": "core"
     },
     {
       "name": "Table Tennis",
       "code": "TTE",
       "scores": {
-        "popularity": 0.4072,
+        "popularity": 0.5851,
         "sustainability": 0.7124,
         "inclusivity": 0.3843,
         "innovation": 0.424
@@ -497,7 +550,8 @@
           "total_appearances": 10,
           "total_events": 42,
           "growth_score": 0.3667,
-          "recency_score": 1.0
+          "recency_score": 1.0,
+          "if_members": 227
         },
         "sustainability": {
           "continuity": 0.3226,
@@ -518,53 +572,95 @@
           "change_rate": 0.125
         }
       },
-      "gender_equity": null,
-      "safety": null
+      "gender_equity": 0.95,
+      "safety": 0.85,
+      "status": "core"
     },
     {
-      "name": "Badminton",
-      "code": "BDM",
+      "name": "Aquatics",
+      "code": "SWA",
       "scores": {
-        "popularity": 0.3962,
-        "sustainability": 0.7049,
-        "inclusivity": 0.3746,
-        "innovation": 0.3769
+        "popularity": 0.5799,
+        "sustainability": 0.7156,
+        "inclusivity": 0.4315,
+        "innovation": 0.4176
       },
       "details": {
         "popularity": {
-          "total_appearances": 9,
-          "total_events": 44,
-          "growth_score": 0.3509,
-          "recency_score": 1.0
+          "total_appearances": 11,
+          "total_events": 21,
+          "growth_score": 0.3704,
+          "recency_score": 1.0,
+          "if_members": 210
         },
         "sustainability": {
-          "continuity": 0.2903,
-          "stability": 0.9679,
+          "continuity": 0.3548,
+          "stability": 0.9247,
           "resilience": 0.0,
-          "max_consecutive": 9,
+          "max_consecutive": 11,
           "gaps": 0
         },
         "inclusivity": {
-          "appearances_ratio": 0.2903,
-          "event_breadth": 0.25,
-          "era_score": 0.25,
+          "appearances_ratio": 0.3548,
+          "event_breadth": 0.1,
+          "era_score": 0.5,
           "future_included": 1
         },
         "innovation": {
-          "first_year": 1992,
-          "recency": 0.7538,
+          "first_year": 1984,
+          "recency": 0.6923,
+          "change_rate": 0.1429
+        }
+      },
+      "gender_equity": 0.95,
+      "safety": 0.88,
+      "status": "core"
+    },
+    {
+      "name": "Field hockey",
+      "code": "HOC",
+      "scores": {
+        "popularity": 0.5754,
+        "sustainability": 0.6877,
+        "inclusivity": 0.7169,
+        "innovation": 0.0538
+      },
+      "details": {
+        "popularity": {
+          "total_appearances": 25,
+          "total_events": 37,
+          "growth_score": 0.641,
+          "recency_score": 0.6486,
+          "if_members": 137
+        },
+        "sustainability": {
+          "continuity": 0.7419,
+          "stability": 0.8312,
+          "resilience": 0.3,
+          "max_consecutive": 23,
+          "gaps": 2
+        },
+        "inclusivity": {
+          "appearances_ratio": 0.8065,
+          "event_breadth": 0.1,
+          "era_score": 1.0,
+          "future_included": 1
+        },
+        "innovation": {
+          "first_year": 1908,
+          "recency": 0.1077,
           "change_rate": 0.0
         }
       },
-      "gender_equity": 0.92,
-      "safety": 0.7,
+      "gender_equity": 0.88,
+      "safety": 0.55,
       "status": "core"
     },
     {
       "name": "Taekwondo",
       "code": "TKW",
       "scores": {
-        "popularity": 0.3857,
+        "popularity": 0.5686,
         "sustainability": 0.6903,
         "inclusivity": 0.3927,
         "innovation": 0.5744
@@ -574,7 +670,8 @@
           "total_appearances": 7,
           "total_events": 56,
           "growth_score": 0.3333,
-          "recency_score": 1.0
+          "recency_score": 1.0,
+          "if_members": 213
         },
         "sustainability": {
           "continuity": 0.2258,
@@ -600,10 +697,249 @@
       "status": "core"
     },
     {
+      "name": "Volleyball",
+      "code": "VBV",
+      "scores": {
+        "popularity": 0.5569,
+        "sustainability": 0.7032,
+        "inclusivity": 0.3274,
+        "innovation": 0.3923
+      },
+      "details": {
+        "popularity": {
+          "total_appearances": 8,
+          "total_events": 16,
+          "growth_score": 0.3333,
+          "recency_score": 1.0,
+          "if_members": 222
+        },
+        "sustainability": {
+          "continuity": 0.2581,
+          "stability": 1.0,
+          "resilience": 0.0,
+          "max_consecutive": 8,
+          "gaps": 0
+        },
+        "inclusivity": {
+          "appearances_ratio": 0.2581,
+          "event_breadth": 0.1,
+          "era_score": 0.25,
+          "future_included": 1
+        },
+        "innovation": {
+          "first_year": 1996,
+          "recency": 0.7846,
+          "change_rate": 0.0
+        }
+      },
+      "gender_equity": 0.95,
+      "safety": 0.65,
+      "status": "core"
+    },
+    {
+      "name": "Badminton",
+      "code": "BDM",
+      "scores": {
+        "popularity": 0.5563,
+        "sustainability": 0.7049,
+        "inclusivity": 0.3746,
+        "innovation": 0.3769
+      },
+      "details": {
+        "popularity": {
+          "total_appearances": 9,
+          "total_events": 44,
+          "growth_score": 0.3509,
+          "recency_score": 1.0,
+          "if_members": 199
+        },
+        "sustainability": {
+          "continuity": 0.2903,
+          "stability": 0.9679,
+          "resilience": 0.0,
+          "max_consecutive": 9,
+          "gaps": 0
+        },
+        "inclusivity": {
+          "appearances_ratio": 0.2903,
+          "event_breadth": 0.25,
+          "era_score": 0.25,
+          "future_included": 1
+        },
+        "innovation": {
+          "first_year": 1992,
+          "recency": 0.7538,
+          "change_rate": 0.0
+        }
+      },
+      "gender_equity": 0.92,
+      "safety": 0.7,
+      "status": "core"
+    },
+    {
+      "name": "Archery",
+      "code": "ARC",
+      "scores": {
+        "popularity": 0.5415,
+        "sustainability": 0.4756,
+        "inclusivity": 0.6742,
+        "innovation": 0.0856
+      },
+      "details": {
+        "popularity": {
+          "total_appearances": 18,
+          "total_events": 76,
+          "growth_score": 0.3333,
+          "recency_score": 0.7105,
+          "if_members": 170
+        },
+        "sustainability": {
+          "continuity": 0.4516,
+          "stability": 0.7713,
+          "resilience": 0.45,
+          "max_consecutive": 14,
+          "gaps": 3
+        },
+        "inclusivity": {
+          "appearances_ratio": 0.5806,
+          "event_breadth": 0.5,
+          "era_score": 0.75,
+          "future_included": 1
+        },
+        "innovation": {
+          "first_year": 1900,
+          "recency": 0.0462,
+          "change_rate": 0.125
+        }
+      },
+      "gender_equity": 0.9,
+      "safety": 0.92,
+      "status": "core"
+    },
+    {
+      "name": "Equestrian",
+      "code": "EDR",
+      "scores": {
+        "popularity": 0.5278,
+        "sustainability": 0.9013,
+        "inclusivity": 0.7266,
+        "innovation": 0.0692
+      },
+      "details": {
+        "popularity": {
+          "total_appearances": 26,
+          "total_events": 48,
+          "growth_score": 0.3939,
+          "recency_score": 0.5,
+          "if_members": 136
+        },
+        "sustainability": {
+          "continuity": 0.8387,
+          "stability": 0.9023,
+          "resilience": 0.0,
+          "max_consecutive": 26,
+          "gaps": 0
+        },
+        "inclusivity": {
+          "appearances_ratio": 0.8387,
+          "event_breadth": 0.1,
+          "era_score": 1.0,
+          "future_included": 1
+        },
+        "innovation": {
+          "first_year": 1912,
+          "recency": 0.1385,
+          "change_rate": 0.0
+        }
+      },
+      "gender_equity": 0.95,
+      "safety": 0.65,
+      "status": "core"
+    },
+    {
+      "name": "Modern Pentathlon",
+      "code": "MPN",
+      "scores": {
+        "popularity": 0.5174,
+        "sustainability": 0.8878,
+        "inclusivity": 0.7266,
+        "innovation": 0.1407
+      },
+      "details": {
+        "popularity": {
+          "total_appearances": 26,
+          "total_events": 44,
+          "growth_score": 0.4386,
+          "recency_score": 0.5455,
+          "if_members": 120
+        },
+        "sustainability": {
+          "continuity": 0.8387,
+          "stability": 0.8636,
+          "resilience": 0.0,
+          "max_consecutive": 26,
+          "gaps": 0
+        },
+        "inclusivity": {
+          "appearances_ratio": 0.8387,
+          "event_breadth": 0.1,
+          "era_score": 1.0,
+          "future_included": 1
+        },
+        "innovation": {
+          "first_year": 1912,
+          "recency": 0.1385,
+          "change_rate": 0.1429
+        }
+      },
+      "gender_equity": null,
+      "safety": null
+    },
+    {
+      "name": "Basketball",
+      "code": "BK3",
+      "scores": {
+        "popularity": 0.5034,
+        "sustainability": 0.6258,
+        "inclusivity": 0.2694,
+        "innovation": 0.9846
+      },
+      "details": {
+        "popularity": {
+          "total_appearances": 2,
+          "total_events": 4,
+          "growth_score": 0.3,
+          "recency_score": 1.0,
+          "if_members": 213
+        },
+        "sustainability": {
+          "continuity": 0.0645,
+          "stability": 1.0,
+          "resilience": 0.0,
+          "max_consecutive": 2,
+          "gaps": 0
+        },
+        "inclusivity": {
+          "appearances_ratio": 0.0645,
+          "event_breadth": 0.1,
+          "era_score": 0.25,
+          "future_included": 1
+        },
+        "innovation": {
+          "first_year": 2020,
+          "recency": 0.9692,
+          "change_rate": 1
+        }
+      },
+      "gender_equity": 0.92,
+      "safety": 0.55,
+      "status": "core"
+    },
+    {
       "name": "Triathlon",
       "code": "TRI",
       "scores": {
-        "popularity": 0.3738,
+        "popularity": 0.5,
         "sustainability": 0.6557,
         "inclusivity": 0.3302,
         "innovation": 0.741
@@ -613,7 +949,8 @@
           "total_appearances": 7,
           "total_events": 16,
           "growth_score": 0.4167,
-          "recency_score": 1.0
+          "recency_score": 1.0,
+          "if_members": 170
         },
         "sustainability": {
           "continuity": 0.2258,
@@ -639,10 +976,88 @@
       "status": "core"
     },
     {
+      "name": "Karate",
+      "code": "KTE",
+      "scores": {
+        "popularity": 0.4997,
+        "sustainability": 0.5,
+        "inclusivity": 0.1847,
+        "innovation": 0.9846
+      },
+      "details": {
+        "popularity": {
+          "total_appearances": 1,
+          "total_events": 8,
+          "growth_score": 0.3,
+          "recency_score": 1.0,
+          "if_members": 201
+        },
+        "sustainability": {
+          "continuity": 0,
+          "variance": 1,
+          "resilience": 0
+        },
+        "inclusivity": {
+          "appearances_ratio": 0.0323,
+          "event_breadth": 0.4,
+          "era_score": 0.25,
+          "future_included": 0
+        },
+        "innovation": {
+          "first_year": 2020,
+          "recency": 0.9692,
+          "change_rate": 1
+        }
+      },
+      "gender_equity": 0.9,
+      "safety": 0.6,
+      "status": "removed_2024"
+    },
+    {
+      "name": "Cycling",
+      "code": "BMF",
+      "scores": {
+        "popularity": 0.4824,
+        "sustainability": 0.6258,
+        "inclusivity": 0.2694,
+        "innovation": 0.9846
+      },
+      "details": {
+        "popularity": {
+          "total_appearances": 2,
+          "total_events": 4,
+          "growth_score": 0.3,
+          "recency_score": 1.0,
+          "if_members": 198
+        },
+        "sustainability": {
+          "continuity": 0.0645,
+          "stability": 1.0,
+          "resilience": 0.0,
+          "max_consecutive": 2,
+          "gaps": 0
+        },
+        "inclusivity": {
+          "appearances_ratio": 0.0645,
+          "event_breadth": 0.1,
+          "era_score": 0.25,
+          "future_included": 1
+        },
+        "innovation": {
+          "first_year": 2020,
+          "recency": 0.9692,
+          "change_rate": 1
+        }
+      },
+      "gender_equity": 0.85,
+      "safety": 0.6,
+      "status": "core"
+    },
+    {
       "name": "Golf",
       "code": "GLF",
       "scores": {
-        "popularity": 0.3331,
+        "popularity": 0.4477,
         "sustainability": 0.5637,
         "inclusivity": 0.3734,
         "innovation": 0.5231
@@ -652,7 +1067,8 @@
           "total_appearances": 5,
           "total_events": 10,
           "growth_score": 0.3333,
-          "recency_score": 1.0
+          "recency_score": 1.0,
+          "if_members": 153
         },
         "sustainability": {
           "continuity": 0.0968,
@@ -678,47 +1094,90 @@
       "status": "new"
     },
     {
-      "name": "Karate",
-      "code": "KTE",
+      "name": "Baseball and Softball",
+      "code": "BSB",
       "scores": {
-        "popularity": 0.3113,
-        "sustainability": 0.5,
-        "inclusivity": 0.1847,
-        "innovation": 0.9846
+        "popularity": 0.4452,
+        "sustainability": 0.5895,
+        "inclusivity": 0.2956,
+        "innovation": 0.3769
       },
       "details": {
         "popularity": {
-          "total_appearances": 1,
-          "total_events": 8,
-          "growth_score": 0.3,
-          "recency_score": 1.0
+          "total_appearances": 6,
+          "total_events": 6,
+          "growth_score": 0.3333,
+          "recency_score": 0.5,
+          "if_members": 198
         },
         "sustainability": {
-          "continuity": 0,
-          "variance": 1,
-          "resilience": 0
+          "continuity": 0.1613,
+          "stability": 1.0,
+          "resilience": 0.15,
+          "max_consecutive": 5,
+          "gaps": 1
         },
         "inclusivity": {
-          "appearances_ratio": 0.0323,
-          "event_breadth": 0.4,
+          "appearances_ratio": 0.1935,
+          "event_breadth": 0.05,
           "era_score": 0.25,
-          "future_included": 0
+          "future_included": 1
         },
         "innovation": {
-          "first_year": 2020,
-          "recency": 0.9692,
+          "first_year": 1992,
+          "recency": 0.7538,
+          "change_rate": -0.75
+        }
+      },
+      "gender_equity": 0.8,
+      "safety": 0.8,
+      "status": "removed"
+    },
+    {
+      "name": "Rugby",
+      "code": "RU7",
+      "scores": {
+        "popularity": 0.3992,
+        "sustainability": 0.6387,
+        "inclusivity": 0.279,
+        "innovation": 0.9692
+      },
+      "details": {
+        "popularity": {
+          "total_appearances": 3,
+          "total_events": 6,
+          "growth_score": 0.3,
+          "recency_score": 1.0,
+          "if_members": 133
+        },
+        "sustainability": {
+          "continuity": 0.0968,
+          "stability": 1.0,
+          "resilience": 0.0,
+          "max_consecutive": 3,
+          "gaps": 0
+        },
+        "inclusivity": {
+          "appearances_ratio": 0.0968,
+          "event_breadth": 0.1,
+          "era_score": 0.25,
+          "future_included": 1
+        },
+        "innovation": {
+          "first_year": 2016,
+          "recency": 0.9385,
           "change_rate": 1
         }
       },
-      "gender_equity": 0.9,
-      "safety": 0.6,
-      "status": "removed"
+      "gender_equity": 0.88,
+      "safety": 0.45,
+      "status": "new"
     },
     {
       "name": "Skateboarding",
       "code": "SKB",
       "scores": {
-        "popularity": 0.3026,
+        "popularity": 0.394,
         "sustainability": 0.6258,
         "inclusivity": 0.2944,
         "innovation": 0.9846
@@ -728,7 +1187,8 @@
           "total_appearances": 2,
           "total_events": 8,
           "growth_score": 0.3,
-          "recency_score": 1.0
+          "recency_score": 1.0,
+          "if_members": 130
         },
         "sustainability": {
           "continuity": 0.0645,
@@ -754,49 +1214,10 @@
       "status": "new"
     },
     {
-      "name": "Sport Climbing",
-      "code": "CLB",
-      "scores": {
-        "popularity": 0.2976,
-        "sustainability": 0.5675,
-        "inclusivity": 0.2944,
-        "innovation": 0.9846
-      },
-      "details": {
-        "popularity": {
-          "total_appearances": 2,
-          "total_events": 6,
-          "growth_score": 0.3,
-          "recency_score": 1.0
-        },
-        "sustainability": {
-          "continuity": 0.0645,
-          "stability": 0.8333,
-          "resilience": 0.0,
-          "max_consecutive": 2,
-          "gaps": 0
-        },
-        "inclusivity": {
-          "appearances_ratio": 0.0645,
-          "event_breadth": 0.2,
-          "era_score": 0.25,
-          "future_included": 1
-        },
-        "innovation": {
-          "first_year": 2020,
-          "recency": 0.9692,
-          "change_rate": 1
-        }
-      },
-      "gender_equity": 0.9,
-      "safety": 0.85,
-      "status": "new"
-    },
-    {
       "name": "Surfing",
       "code": "SRF",
       "scores": {
-        "popularity": 0.2926,
+        "popularity": 0.3688,
         "sustainability": 0.6258,
         "inclusivity": 0.2694,
         "innovation": 0.9846
@@ -806,7 +1227,8 @@
           "total_appearances": 2,
           "total_events": 4,
           "growth_score": 0.3,
-          "recency_score": 1.0
+          "recency_score": 1.0,
+          "if_members": 117
         },
         "sustainability": {
           "continuity": 0.0645,
@@ -832,10 +1254,50 @@
       "status": "new"
     },
     {
+      "name": "Sport Climbing",
+      "code": "CLB",
+      "scores": {
+        "popularity": 0.3485,
+        "sustainability": 0.5675,
+        "inclusivity": 0.2944,
+        "innovation": 0.9846
+      },
+      "details": {
+        "popularity": {
+          "total_appearances": 2,
+          "total_events": 6,
+          "growth_score": 0.3,
+          "recency_score": 1.0,
+          "if_members": 100
+        },
+        "sustainability": {
+          "continuity": 0.0645,
+          "stability": 0.8333,
+          "resilience": 0.0,
+          "max_consecutive": 2,
+          "gaps": 0
+        },
+        "inclusivity": {
+          "appearances_ratio": 0.0645,
+          "event_breadth": 0.2,
+          "era_score": 0.25,
+          "future_included": 1
+        },
+        "innovation": {
+          "first_year": 2020,
+          "recency": 0.9692,
+          "change_rate": 1
+        }
+      },
+      "gender_equity": 0.9,
+      "safety": 0.85,
+      "status": "new"
+    },
+    {
       "name": "Breaking",
       "code": "BKG",
       "scores": {
-        "popularity": 0.2813,
+        "popularity": 0.3273,
         "sustainability": 0.5,
         "inclusivity": 0.1097,
         "innovation": 1.0
@@ -845,7 +1307,8 @@
           "total_appearances": 1,
           "total_events": 2,
           "growth_score": 0.3,
-          "recency_score": 1.0
+          "recency_score": 1.0,
+          "if_members": 93
         },
         "sustainability": {
           "continuity": 0,
@@ -869,37 +1332,75 @@
       "status": "new"
     },
     {
-      "name": "Tug of War",
-      "code": "TOW",
+      "name": "Rowing",
+      "code": "ROC",
       "scores": {
-        "popularity": 0.1394,
-        "sustainability": 0.6774,
-        "inclusivity": 0.1456,
-        "innovation": 0.0231
+        "popularity": 0.2649,
+        "sustainability": 0.5,
+        "inclusivity": 0.15,
+        "innovation": 0.5
       },
       "details": {
         "popularity": {
-          "total_appearances": 6,
-          "total_events": 6,
-          "growth_score": 0.3333,
-          "recency_score": 0.0
+          "total_appearances": 0,
+          "total_events": 0,
+          "growth_score": 0.3,
+          "recency_score": 0,
+          "if_members": 159
         },
         "sustainability": {
-          "continuity": 0.1935,
-          "stability": 1.0,
-          "resilience": 0.0,
-          "max_consecutive": 6,
-          "gaps": 0
+          "continuity": 0,
+          "variance": 1,
+          "resilience": 0
         },
         "inclusivity": {
-          "appearances_ratio": 0.1935,
-          "event_breadth": 0.05,
+          "appearances_ratio": 0.0,
+          "event_breadth": 0.0,
+          "era_score": 0.0,
+          "future_included": 1
+        },
+        "innovation": {
+          "first_year": null,
+          "recent_change": 0
+        }
+      },
+      "gender_equity": 0.9,
+      "safety": 0.75,
+      "status": "core"
+    },
+    {
+      "name": "Skating",
+      "code": "FSK",
+      "scores": {
+        "popularity": 0.2102,
+        "sustainability": 0.5129,
+        "inclusivity": 0.1444,
+        "innovation": 0.0538
+      },
+      "details": {
+        "popularity": {
+          "total_appearances": 2,
+          "total_events": 7,
+          "growth_score": 0.3,
+          "recency_score": 0.0,
+          "if_members": 100
+        },
+        "sustainability": {
+          "continuity": 0.0323,
+          "stability": 0.9286,
+          "resilience": 0.15,
+          "max_consecutive": 1,
+          "gaps": 1
+        },
+        "inclusivity": {
+          "appearances_ratio": 0.0645,
+          "event_breadth": 0.2,
           "era_score": 0.25,
           "future_included": 0
         },
         "innovation": {
-          "first_year": 1900,
-          "recency": 0.0462,
+          "first_year": 1908,
+          "recency": 0.1077,
           "change_rate": 0
         }
       },
@@ -907,10 +1408,85 @@
       "safety": null
     },
     {
+      "name": "Cricket",
+      "code": "CKT",
+      "scores": {
+        "popularity": 0.2048,
+        "sustainability": 0.5,
+        "inclusivity": 0.2472,
+        "innovation": 0.0231
+      },
+      "details": {
+        "popularity": {
+          "total_appearances": 1,
+          "total_events": 1,
+          "growth_score": 0.3,
+          "recency_score": 0.0,
+          "if_members": 108
+        },
+        "sustainability": {
+          "continuity": 0,
+          "variance": 1,
+          "resilience": 0
+        },
+        "inclusivity": {
+          "appearances_ratio": 0.0323,
+          "event_breadth": 0.05,
+          "era_score": 0.25,
+          "future_included": 1
+        },
+        "innovation": {
+          "first_year": 1900,
+          "recency": 0.0462,
+          "change_rate": 0
+        }
+      },
+      "gender_equity": 0.7,
+      "safety": 0.65,
+      "status": "candidate"
+    },
+    {
+      "name": "Squash",
+      "code": "SQU",
+      "scores": {
+        "popularity": 0.2032,
+        "sustainability": 0.5,
+        "inclusivity": 0.15,
+        "innovation": 0.5
+      },
+      "details": {
+        "popularity": {
+          "total_appearances": 0,
+          "total_events": 0,
+          "growth_score": 0.3,
+          "recency_score": 0,
+          "if_members": 115
+        },
+        "sustainability": {
+          "continuity": 0,
+          "variance": 1,
+          "resilience": 0
+        },
+        "inclusivity": {
+          "appearances_ratio": 0.0,
+          "event_breadth": 0.0,
+          "era_score": 0.0,
+          "future_included": 1
+        },
+        "innovation": {
+          "first_year": null,
+          "recent_change": 0
+        }
+      },
+      "gender_equity": 0.88,
+      "safety": 0.65,
+      "status": "candidate"
+    },
+    {
       "name": "Polo",
       "code": "POL",
       "scores": {
-        "popularity": 0.1281,
+        "popularity": 0.2018,
         "sustainability": 0.4008,
         "inclusivity": 0.2109,
         "innovation": 0.0231
@@ -920,7 +1496,8 @@
           "total_appearances": 5,
           "total_events": 5,
           "growth_score": 0.3333,
-          "recency_score": 0.0
+          "recency_score": 0.0,
+          "if_members": 80
         },
         "sustainability": {
           "continuity": 0.0645,
@@ -945,29 +1522,32 @@
       "safety": null
     },
     {
-      "name": "Croquet",
-      "code": "CQT",
+      "name": "Tug of War",
+      "code": "TOW",
       "scores": {
-        "popularity": 0.0863,
-        "sustainability": 0.5,
-        "inclusivity": 0.1222,
+        "popularity": 0.1957,
+        "sustainability": 0.6774,
+        "inclusivity": 0.1456,
         "innovation": 0.0231
       },
       "details": {
         "popularity": {
-          "total_appearances": 1,
-          "total_events": 3,
-          "growth_score": 0.3,
-          "recency_score": 0.0
+          "total_appearances": 6,
+          "total_events": 6,
+          "growth_score": 0.3333,
+          "recency_score": 0.0,
+          "if_members": 70
         },
         "sustainability": {
-          "continuity": 0,
-          "variance": 1,
-          "resilience": 0
+          "continuity": 0.1935,
+          "stability": 1.0,
+          "resilience": 0.0,
+          "max_consecutive": 6,
+          "gaps": 0
         },
         "inclusivity": {
-          "appearances_ratio": 0.0323,
-          "event_breadth": 0.15,
+          "appearances_ratio": 0.1935,
+          "event_breadth": 0.05,
           "era_score": 0.25,
           "future_included": 0
         },
@@ -981,10 +1561,83 @@
       "safety": null
     },
     {
+      "name": "Ice Hockey",
+      "code": "IHO",
+      "scores": {
+        "popularity": 0.1613,
+        "sustainability": 0.5,
+        "inclusivity": 0.0972,
+        "innovation": 0.1
+      },
+      "details": {
+        "popularity": {
+          "total_appearances": 1,
+          "total_events": 1,
+          "growth_score": 0.3,
+          "recency_score": 0.0,
+          "if_members": 77
+        },
+        "sustainability": {
+          "continuity": 0,
+          "variance": 1,
+          "resilience": 0
+        },
+        "inclusivity": {
+          "appearances_ratio": 0.0323,
+          "event_breadth": 0.05,
+          "era_score": 0.25,
+          "future_included": 0
+        },
+        "innovation": {
+          "first_year": 1920,
+          "recency": 0.2,
+          "change_rate": 0
+        }
+      },
+      "gender_equity": null,
+      "safety": null
+    },
+    {
+      "name": "Lacrosse",
+      "code": "LAX",
+      "scores": {
+        "popularity": 0.1471,
+        "sustainability": 0.5,
+        "inclusivity": 0.15,
+        "innovation": 0.5
+      },
+      "details": {
+        "popularity": {
+          "total_appearances": 0,
+          "total_events": 0,
+          "growth_score": 0.3,
+          "recency_score": 0,
+          "if_members": 75
+        },
+        "sustainability": {
+          "continuity": 0,
+          "variance": 1,
+          "resilience": 0
+        },
+        "inclusivity": {
+          "appearances_ratio": 0.0,
+          "event_breadth": 0.0,
+          "era_score": 0.0,
+          "future_included": 1
+        },
+        "innovation": {
+          "first_year": null,
+          "recent_change": 0
+        }
+      },
+      "gender_equity": null,
+      "safety": null
+    },
+    {
       "name": "Water Motorsports",
       "code": "PBT",
       "scores": {
-        "popularity": 0.0863,
+        "popularity": 0.1445,
         "sustainability": 0.5,
         "inclusivity": 0.1222,
         "innovation": 0.0538
@@ -994,7 +1647,8 @@
           "total_appearances": 1,
           "total_events": 3,
           "growth_score": 0.3,
-          "recency_score": 0.0
+          "recency_score": 0.0,
+          "if_members": 60
         },
         "sustainability": {
           "continuity": 0,
@@ -1017,10 +1671,120 @@
       "safety": null
     },
     {
+      "name": "Flag football",
+      "code": "AFB",
+      "scores": {
+        "popularity": 0.1401,
+        "sustainability": 0.5,
+        "inclusivity": 0.15,
+        "innovation": 0.5
+      },
+      "details": {
+        "popularity": {
+          "total_appearances": 0,
+          "total_events": 0,
+          "growth_score": 0.3,
+          "recency_score": 0,
+          "if_members": 70
+        },
+        "sustainability": {
+          "continuity": 0,
+          "variance": 1,
+          "resilience": 0
+        },
+        "inclusivity": {
+          "appearances_ratio": 0.0,
+          "event_breadth": 0.0,
+          "era_score": 0.0,
+          "future_included": 1
+        },
+        "innovation": {
+          "first_year": null,
+          "recent_change": 0
+        }
+      },
+      "gender_equity": null,
+      "safety": null
+    },
+    {
+      "name": "Croquet",
+      "code": "CQT",
+      "scores": {
+        "popularity": 0.1025,
+        "sustainability": 0.5,
+        "inclusivity": 0.1222,
+        "innovation": 0.0231
+      },
+      "details": {
+        "popularity": {
+          "total_appearances": 1,
+          "total_events": 3,
+          "growth_score": 0.3,
+          "recency_score": 0.0,
+          "if_members": 30
+        },
+        "sustainability": {
+          "continuity": 0,
+          "variance": 1,
+          "resilience": 0
+        },
+        "inclusivity": {
+          "appearances_ratio": 0.0323,
+          "event_breadth": 0.15,
+          "era_score": 0.25,
+          "future_included": 0
+        },
+        "innovation": {
+          "first_year": 1900,
+          "recency": 0.0462,
+          "change_rate": 0
+        }
+      },
+      "gender_equity": null,
+      "safety": null
+    },
+    {
+      "name": "Basque Pelota",
+      "code": "PEL",
+      "scores": {
+        "popularity": 0.0955,
+        "sustainability": 0.5,
+        "inclusivity": 0.0972,
+        "innovation": 0.0231
+      },
+      "details": {
+        "popularity": {
+          "total_appearances": 1,
+          "total_events": 1,
+          "growth_score": 0.3,
+          "recency_score": 0.0,
+          "if_members": 30
+        },
+        "sustainability": {
+          "continuity": 0,
+          "variance": 1,
+          "resilience": 0
+        },
+        "inclusivity": {
+          "appearances_ratio": 0.0323,
+          "event_breadth": 0.05,
+          "era_score": 0.25,
+          "future_included": 0
+        },
+        "innovation": {
+          "first_year": 1900,
+          "recency": 0.0462,
+          "change_rate": 0
+        }
+      },
+      "gender_equity": null,
+      "safety": null
+    },
+    {
       "name": "Rackets",
       "code": "RQT",
       "scores": {
-        "popularity": 0.0813,
+        "popularity": 0.0583,
         "sustainability": 0.5,
         "inclusivity": 0.1097,
         "innovation": 0.0538
@@ -1030,7 +1794,8 @@
           "total_appearances": 1,
           "total_events": 2,
           "growth_score": 0.3,
-          "recency_score": 0.0
+          "recency_score": 0.0,
+          "if_members": 1
         },
         "sustainability": {
           "continuity": 0,
@@ -1053,82 +1818,10 @@
       "safety": null
     },
     {
-      "name": "Basque Pelota",
-      "code": "PEL",
-      "scores": {
-        "popularity": 0.0763,
-        "sustainability": 0.5,
-        "inclusivity": 0.0972,
-        "innovation": 0.0231
-      },
-      "details": {
-        "popularity": {
-          "total_appearances": 1,
-          "total_events": 1,
-          "growth_score": 0.3,
-          "recency_score": 0.0
-        },
-        "sustainability": {
-          "continuity": 0,
-          "variance": 1,
-          "resilience": 0
-        },
-        "inclusivity": {
-          "appearances_ratio": 0.0323,
-          "event_breadth": 0.05,
-          "era_score": 0.25,
-          "future_included": 0
-        },
-        "innovation": {
-          "first_year": 1900,
-          "recency": 0.0462,
-          "change_rate": 0
-        }
-      },
-      "gender_equity": null,
-      "safety": null
-    },
-    {
-      "name": "Cricket",
-      "code": "CKT",
-      "scores": {
-        "popularity": 0.0763,
-        "sustainability": 0.5,
-        "inclusivity": 0.2472,
-        "innovation": 0.0231
-      },
-      "details": {
-        "popularity": {
-          "total_appearances": 1,
-          "total_events": 1,
-          "growth_score": 0.3,
-          "recency_score": 0.0
-        },
-        "sustainability": {
-          "continuity": 0,
-          "variance": 1,
-          "resilience": 0
-        },
-        "inclusivity": {
-          "appearances_ratio": 0.0323,
-          "event_breadth": 0.05,
-          "era_score": 0.25,
-          "future_included": 1
-        },
-        "innovation": {
-          "first_year": 1900,
-          "recency": 0.0462,
-          "change_rate": 0
-        }
-      },
-      "gender_equity": null,
-      "safety": null
-    },
-    {
       "name": "Jeu de Paume",
       "code": "–",
       "scores": {
-        "popularity": 0.0763,
+        "popularity": 0.0548,
         "sustainability": 0.5,
         "inclusivity": 0.0972,
         "innovation": 0.0538
@@ -1138,7 +1831,8 @@
           "total_appearances": 1,
           "total_events": 1,
           "growth_score": 0.3,
-          "recency_score": 0.0
+          "recency_score": 0.0,
+          "if_members": 1
         },
         "sustainability": {
           "continuity": 0,
@@ -1164,7 +1858,7 @@
       "name": "Roque",
       "code": "–",
       "scores": {
-        "popularity": 0.0763,
+        "popularity": 0.0548,
         "sustainability": 0.5,
         "inclusivity": 0.0972,
         "innovation": 0.0385
@@ -1174,7 +1868,8 @@
           "total_appearances": 1,
           "total_events": 1,
           "growth_score": 0.3,
-          "recency_score": 0.0
+          "recency_score": 0.0,
+          "if_members": 1
         },
         "sustainability": {
           "continuity": 0,
@@ -1191,112 +1886,6 @@
           "first_year": 1904,
           "recency": 0.0769,
           "change_rate": 0
-        }
-      },
-      "gender_equity": null,
-      "safety": null
-    },
-    {
-      "name": "Ice Hockey",
-      "code": "IHO",
-      "scores": {
-        "popularity": 0.0763,
-        "sustainability": 0.5,
-        "inclusivity": 0.0972,
-        "innovation": 0.1
-      },
-      "details": {
-        "popularity": {
-          "total_appearances": 1,
-          "total_events": 1,
-          "growth_score": 0.3,
-          "recency_score": 0.0
-        },
-        "sustainability": {
-          "continuity": 0,
-          "variance": 1,
-          "resilience": 0
-        },
-        "inclusivity": {
-          "appearances_ratio": 0.0323,
-          "event_breadth": 0.05,
-          "era_score": 0.25,
-          "future_included": 0
-        },
-        "innovation": {
-          "first_year": 1920,
-          "recency": 0.2,
-          "change_rate": 0
-        }
-      },
-      "gender_equity": null,
-      "safety": null
-    },
-    {
-      "name": "Flag football",
-      "code": "AFB",
-      "scores": {
-        "popularity": 0.06,
-        "sustainability": 0.5,
-        "inclusivity": 0.15,
-        "innovation": 0.5
-      },
-      "details": {
-        "popularity": {
-          "total_appearances": 0,
-          "total_events": 0,
-          "growth_score": 0.3,
-          "recency_score": 0
-        },
-        "sustainability": {
-          "continuity": 0,
-          "variance": 1,
-          "resilience": 0
-        },
-        "inclusivity": {
-          "appearances_ratio": 0.0,
-          "event_breadth": 0.0,
-          "era_score": 0.0,
-          "future_included": 1
-        },
-        "innovation": {
-          "first_year": null,
-          "recent_change": 0
-        }
-      },
-      "gender_equity": null,
-      "safety": null
-    },
-    {
-      "name": "Squash",
-      "code": "SQU",
-      "scores": {
-        "popularity": 0.06,
-        "sustainability": 0.5,
-        "inclusivity": 0.15,
-        "innovation": 0.5
-      },
-      "details": {
-        "popularity": {
-          "total_appearances": 0,
-          "total_events": 0,
-          "growth_score": 0.3,
-          "recency_score": 0
-        },
-        "sustainability": {
-          "continuity": 0,
-          "variance": 1,
-          "resilience": 0
-        },
-        "inclusivity": {
-          "appearances_ratio": 0.0,
-          "event_breadth": 0.0,
-          "era_score": 0.0,
-          "future_included": 1
-        },
-        "innovation": {
-          "first_year": null,
-          "recent_change": 0
         }
       },
       "gender_equity": null,
