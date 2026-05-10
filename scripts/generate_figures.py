@@ -84,8 +84,8 @@ def plot_sensitivity(Wa, We, labels, path):
 def main():
     FIGURES.mkdir(exist_ok=True)
 
-    # AHP
-    ar = ahp_analysis(A); Wa = ar["weights"].real
+    # AHP (thesis weights from geometric mean of 5 expert matrices)
+    Wa = np.array([0.362, 0.189, 0.106, 0.090, 0.064, 0.189])
 
     # EWM
     Xn = X.copy()

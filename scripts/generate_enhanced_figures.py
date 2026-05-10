@@ -17,8 +17,6 @@ LABELS = ["流行度","性别平等","可持续性","包容性","创新性","安
 NAMES = ["足球","电子竞技","篮球","田径","游泳","攀岩","滑板","冲浪","霹雳舞","板球","空手道","棒球/垒球"]
 
 Wa = np.array([0.362, 0.189, 0.106, 0.090, 0.064, 0.189])
-We = np.array([0.1439, 0.0883, 0.2724, 0.2056, 0.1980, 0.0918])
-Wh = 0.5 * Wa + 0.5 * We
 
 X = np.array([
     [0.6918, 0.80, 0.7347, 0.7556, 0.0231, 0.50],
@@ -34,6 +32,18 @@ X = np.array([
     [0.4997, 0.90, 0.5000, 0.1847, 0.9846, 0.60],
     [0.4452, 0.80, 0.5895, 0.2956, 0.3769, 0.80],
 ])
+
+Xn = X.copy()
+for j in range(6):
+    c = Xn[:, j]; r = c.max() - c.min()
+    Xn[:, j] = (c - c.min()) / max(r, 1e-10)
+
+# EWM computed dynamically from normalized matrix
+p = Xn / Xn.sum(axis=0, keepdims=True)
+p = np.where(p==0, 1e-10, p)
+H_ent = -np.sum(p*np.log(p), axis=0) / np.log(12)
+We = (1-H_ent) / (1-H_ent).sum()
+Wh = 0.5 * Wa + 0.5 * We
 
 CATEGORIES = np.array(["核心","候选","核心","核心","核心","新增","新增","新增","新增","候选","已移除","已移除"])
 CAT_COLORS = {"核心": "#3498db", "新增": "#2ecc71", "候选": "#f39c12", "已移除": "#e74c3c"}
@@ -104,7 +114,7 @@ def fig_expert_heatmap():
 # 3. 三种方法排名对比
 # ──────────────────────────────
 def fig_method_comparison():
-    scores_ahp = X @ Wa; scores_ewm = X @ We; scores_hyd = X @ Wh
+    scores_ahp = Xn @ Wa; scores_ewm = Xn @ We; scores_hyd = Xn @ Wh
     order_ahp = np.argsort(-scores_ahp); order_ewm = np.argsort(-scores_ewm); order_hyd = np.argsort(-scores_hyd)
     fig, axes = plt.subplots(1, 3, figsize=(15, 6.5), sharey=True)
     titles = ["纯AHP (α=1)", "纯EWM (α=0)", "混合权重 (α=0.5)"]
@@ -129,12 +139,12 @@ def fig_method_comparison():
 # 4. 不同α取值下排名变化轨迹
 # ──────────────────────────────
 def fig_rank_stability():
-    alphas = np.linspace(0, 1, 21)
+    alphas = np.linspace(0.3, 0.7, 21)
     n_sports = len(NAMES)
     rank_trace = np.zeros((len(alphas), n_sports))
     for k, a in enumerate(alphas):
         w = a * Wa + (1-a) * We; w /= w.sum()
-        s = X @ w; r = np.argsort(np.argsort(-s))
+        s = Xn @ w; r = np.argsort(np.argsort(-s))
         rank_trace[k] = r + 1
     fig, ax = plt.subplots(figsize=(11, 6.5))
     colors = plt.cm.tab10(np.linspace(0, 1, n_sports))
@@ -156,13 +166,13 @@ def fig_rank_stability():
 # 5. 各项目综合评分结构分解
 # ──────────────────────────────
 def fig_score_decomposition():
-    scores = X @ Wh; order = np.argsort(-scores)
-    sorted_names = [NAMES[i] for i in order]; sorted_X = X[order]
+    scores = Xn @ Wh; order = np.argsort(-scores)
+    sorted_names = [NAMES[i] for i in order]; sorted_Xn = Xn[order]
     fig, ax = plt.subplots(figsize=(12, 6))
     bottom = np.zeros(12)
     colors = ["#3498db","#e74c3c","#2ecc71","#f39c12","#9b59b6","#1abc9c"]
     for j in range(6):
-        vals = sorted_X[:, j] * Wh[j]
+        vals = sorted_Xn[:, j] * Wh[j]
         ax.barh(range(12), vals, left=bottom, label=LABELS[j], color=colors[j], alpha=0.85)
         bottom += vals
     ax.set_yticks(range(12)); ax.set_yticklabels(sorted_names, fontsize=10)
@@ -177,7 +187,9 @@ def fig_score_decomposition():
 # 6. 2032年候选项目对比
 # ──────────────────────────────
 def fig_prediction_candidates():
-    total = cand_scores @ Wh
+    x_min = X.min(axis=0); x_max = X.max(axis=0); x_range = np.maximum(x_max - x_min, 1e-10)
+    cand_norm = (cand_scores - x_min) / x_range
+    total = cand_norm @ Wh
     order = np.argsort(-total); sn = [cand_names[i] for i in order]; ss = total[order]
     fig = plt.figure(figsize=(13, 5.5))
     ax1 = fig.add_subplot(1, 2, 1)
@@ -245,6 +257,31 @@ def fig_dimension_correlation():
 # ──────────────────────────────
 # 9. 流行度-创新性散点图
 # ──────────────────────────────
+def fig_qq_normality():
+    """六维正态性 Q-Q 图 (2x3 grid)"""
+    from scipy import stats
+    fig, axes = plt.subplots(2, 3, figsize=(9, 6))
+    for idx, (ax, label) in enumerate(zip(axes.flat, LABELS)):
+        stats.probplot(X[:, idx], dist="norm", plot=ax)
+        ax.get_lines()[0].set_markerfacecolor("#3498db")
+        ax.get_lines()[0].set_markeredgecolor("#3498db")
+        ax.get_lines()[0].set_markersize(7)
+        ax.get_lines()[1].set_color("#e74c3c")
+        ax.get_lines()[1].set_linewidth(1.5)
+        ax.set_title(label, fontsize=11)
+        ax.set_xlabel("")
+        ax.set_ylabel("")
+        W, p = stats.shapiro(X[:, idx])
+        color = "green" if p > 0.05 else "red"
+        ax.text(0.05, 0.95, f"W={W:.3f}, p={p:.3f}",
+                transform=ax.transAxes, fontsize=8, va="top", color=color,
+                bbox=dict(boxstyle="round,pad=0.2", facecolor="white", alpha=0.8))
+    fig.suptitle("六维指标 Shapiro-Wilk 正态性 Q-Q 图", fontsize=14, y=1.02)
+    plt.tight_layout()
+    plt.savefig(FIGS / "qq_normality.png", dpi=200, bbox_inches="tight")
+    plt.close()
+    print("[x] qq_normality.png")
+
 def fig_pop_innovation_scatter():
     fig, ax = plt.subplots(figsize=(10, 7))
     for i in range(12):
@@ -315,6 +352,52 @@ def fig_parallel_coordinates():
     plt.tight_layout(); plt.savefig(FIGS/"parallel_coordinates.png", dpi=200, bbox_inches="tight"); plt.close()
     print("[x] parallel_coordinates.png")
 
+# ──────────────────────────────
+# 12. 单维度权重 ±10% 扰动排名稳定性热力图
+# ──────────────────────────────
+def fig_weight_perturbation():
+    base_scores = Xn @ Wh
+    base_ranks = np.argsort(np.argsort(-base_scores)) + 1
+    n = 12
+    pert_labels = ["流行度","性别平等","可持续性","包容性","创新性","安全性"]
+    rank_shift = np.zeros((6, n))
+    for j in range(6):
+        for sign, k in [("+", 0), ("-", 1)]:
+            w_pert = Wh.copy()
+            delta = 0.10 * w_pert[j]
+            if sign == "+":
+                w_pert[j] += delta
+            else:
+                w_pert[j] -= delta
+            w_pert /= w_pert.sum()
+            s = Xn @ w_pert
+            r = np.argsort(np.argsort(-s)) + 1
+            shift = np.abs(r - base_ranks)
+            rank_shift[j] = np.maximum(rank_shift[j], shift)
+    fig, ax = plt.subplots(figsize=(12, 5))
+    im = ax.imshow(rank_shift, cmap="RdYlGn_r", aspect="auto", vmin=0, vmax=3)
+    ax.set_xticks(range(n)); ax.set_xticklabels(NAMES, fontsize=9, rotation=30, ha="right")
+    ax.set_yticks(range(6)); ax.set_yticklabels(pert_labels, fontsize=10)
+    ax.set_title("单维度权重 ±10% 扰动下各项目排名变化", fontsize=13)
+    for i in range(6):
+        for j in range(n):
+            v = int(rank_shift[i, j])
+            c = "white" if v >= 2 else "black"
+            ax.text(j, i, str(v), ha="center", va="center", fontsize=10, fontweight="bold", color=c)
+    cbar = plt.colorbar(im, ax=ax, shrink=0.9)
+    cbar.set_label("排名变化位数", fontsize=10)
+    ax.axhline(y=1.5, color="gray", lw=1, alpha=0.5)
+    ax.axhline(y=4.5, color="gray", lw=1, alpha=0.5)
+    ax.text(-0.5, 0.75, "高权重维度", fontsize=9, color="gray", va="center")
+    ax.text(-0.5, 3.25, "低权重维度", fontsize=9, color="gray", va="center")
+    ax.axvline(x=7.5, color="black", lw=1.5, alpha=0.6, ls="--")
+    ax.axvline(x=10.5, color="black", lw=1.5, alpha=0.6, ls="--")
+    ax.text(3.5, -1.3, "前8名", fontsize=9, ha="center", fontweight="bold")
+    ax.text(9, -1.3, "中间段", fontsize=9, ha="center", fontweight="bold")
+    ax.text(11, -1.3, "后4名", fontsize=9, ha="center", fontweight="bold")
+    plt.tight_layout(); plt.savefig(FIGS/"weight_perturbation.png", dpi=200, bbox_inches="tight"); plt.close()
+    print("[x] weight_perturbation.png")
+
 if __name__ == "__main__":
     FIGS.mkdir(exist_ok=True)
     fig_olympic_growth()
@@ -325,7 +408,9 @@ if __name__ == "__main__":
     fig_prediction_candidates()
     fig_category_comparison()
     fig_dimension_correlation()
+    fig_qq_normality()
     fig_pop_innovation_scatter()
     fig_weight_difference()
     fig_parallel_coordinates()
-    print("\n✓ 全部 11 张增强图片生成完成！")
+    fig_weight_perturbation()
+    print("\n✓ 全部 12 张增强图片生成完成！")
