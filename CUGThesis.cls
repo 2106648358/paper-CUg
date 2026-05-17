@@ -491,7 +491,7 @@
 					\makebox[#1][l]{\quad\defschool} \\
 			\end{tabular}}\\
 			\vspace{6em}
-			{\sanhao \zhdigits{2024}年\zhdigits{4}月}\\
+			{\sanhao \zhdigits{2026}年\zhdigits{5}月}\\
 		\end{center}
 	\end{titlepage}
 }
