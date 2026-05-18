@@ -27,7 +27,7 @@ export default function PredictionTable({ projects }: PredictionTableProps) {
   return (
     <div className="rounded-lg overflow-hidden" style={{ backgroundColor: '#faf9f5', border: '1px solid #f0eee6', boxShadow: 'rgba(0,0,0,0.03) 0px 2px 12px' }}>
       <div className="px-4 py-3 border-b" style={{ borderColor: '#f0eee6' }}>
-        <h3 className="text-sm font-medium" style={{ fontFamily: 'Georgia, serif', color: '#141413' }}>2032 年奥运项目预测结果</h3>
+        <h3 className="text-sm font-medium" style={{ fontFamily: 'Georgia, serif', color: '#141413' }}>2032 年奥运项目分析评估</h3>
       </div>
       <div className="overflow-x-auto max-h-[480px] overflow-y-auto">
         <table className="min-w-full text-xs font-ui">

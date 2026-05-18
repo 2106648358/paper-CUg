@@ -72,7 +72,7 @@ export default function SensitivityAnalysis({ projects, ahpWeights, ewmWeights, 
     <div className="rounded-lg p-4" style={{ backgroundColor: '#faf9f5', border: '1px solid #f0eee6', boxShadow: 'rgba(0,0,0,0.03) 0px 2px 12px' }}>
       <ReactECharts option={option} style={{ height: 400 }} />
       <p className="text-xs font-ui text-center mt-3" style={{ color: '#87867f' }}>
-        α∈[0.4,0.6] 范围内前5名排名保持稳定，模型具有较好的参数鲁棒性
+        α∈[0.4,0.6] 范围内前5名排名波动较小
       </p>
     </div>
   );

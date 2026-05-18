@@ -22,9 +22,9 @@ export default function PredictionSummary({ projects }: PredictionSummaryProps) 
     <div className="space-y-4">
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {[
-          { label: '高概率入选', count: high.length, threshold: `≥${THRESHOLDS.high * 100}%`, items: high, border: '#c96442', bg: 'rgba(201,100,66,0.06)', countColor: '#c96442' },
-          { label: '中等概率', count: medium.length, threshold: `${THRESHOLDS.medium * 100}-${THRESHOLDS.high * 100}%`, items: medium, border: '#e8e6dc', bg: '#f5f4ed', countColor: '#5e5d59' },
-          { label: '可能淘汰', count: low.length, threshold: `<${THRESHOLDS.medium * 100}%`, items: low, border: '#b53333', bg: 'rgba(181,51,51,0.04)', countColor: '#b53333' },
+          { label: '评分较高', count: high.length, threshold: `≥${THRESHOLDS.high * 100}%`, items: high, border: '#c96442', bg: 'rgba(201,100,66,0.06)', countColor: '#c96442' },
+          { label: '中等评分', count: medium.length, threshold: `${THRESHOLDS.medium * 100}-${THRESHOLDS.high * 100}%`, items: medium, border: '#e8e6dc', bg: '#f5f4ed', countColor: '#5e5d59' },
+          { label: '评分较低', count: low.length, threshold: `<${THRESHOLDS.medium * 100}%`, items: low, border: '#b53333', bg: 'rgba(181,51,51,0.04)', countColor: '#b53333' },
         ].map((card) => (
           <div key={card.label} className="rounded-lg p-5 text-center" style={{
             backgroundColor: card.bg,

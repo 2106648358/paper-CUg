@@ -68,7 +68,7 @@ export default function JudgmentMatrix() {
       </div>
 
       <details className="mt-4">
-        <summary className="text-xs font-ui cursor-pointer" style={{ color: '#87867f' }}>查看五位专家权重偏好</summary>
+        <summary className="text-xs font-ui cursor-pointer" style={{ color: '#87867f' }}>查看五位模拟专家权重偏好</summary>
         <div className="mt-3 overflow-x-auto">
           <table className="min-w-full text-xs border-collapse font-ui">
             <thead>
