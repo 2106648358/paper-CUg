@@ -43,7 +43,7 @@ export default function RankingTable({ projects, selectedIds, onSelect }: Rankin
               <th className="px-2 py-2 text-left font-medium" style={{ color: '#5e5d59' }}>项目</th>
               <th className="px-2 py-2 text-left font-medium" style={{ color: '#5e5d59' }}>分类</th>
               <th className="px-2 py-2 text-right font-medium" style={{ color: '#5e5d59' }}>评分</th>
-              <th className="px-2 py-2 text-right font-medium" style={{ color: '#5e5d59' }}>概率</th>
+              <th className="px-2 py-2 text-right font-medium" style={{ color: '#5e5d59' }}>推荐指数</th>
             </tr>
           </thead>
           <tbody className="divide-y" style={{ borderColor: '#f0eee6' }}>

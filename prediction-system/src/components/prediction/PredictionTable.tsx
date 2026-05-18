@@ -37,7 +37,7 @@ export default function PredictionTable({ projects }: PredictionTableProps) {
               <th className="px-3 py-2 text-left font-medium" style={{ color: '#5e5d59' }}>项目</th>
               <th className="px-3 py-2 text-left font-medium" style={{ color: '#5e5d59' }}>分类</th>
               <th className="px-3 py-2 text-right font-medium" style={{ color: '#5e5d59' }}>评分</th>
-              <th className="px-3 py-2 text-right font-medium" style={{ color: '#5e5d59' }}>概率</th>
+              <th className="px-3 py-2 text-right font-medium" style={{ color: '#5e5d59' }}>推荐指数</th>
               <th className="px-3 py-2 text-right font-medium" style={{ color: '#5e5d59' }}>流行度</th>
               <th className="px-3 py-2 text-right font-medium" style={{ color: '#5e5d59' }}>性别平等</th>
               <th className="px-3 py-2 text-right font-medium" style={{ color: '#5e5d59' }}>可持续</th>
