@@ -29,7 +29,7 @@ def perturb_matrix(M, noise_std=0.20):
             if i == j:
                 Mp[i, j] = 1.0
             elif i < j:
-                noise = np.random.lognormal(0, noise_std)
+                noise = np.exp(np.random.normal(0, noise_std))
                 val = M[i, j] * noise
                 Mp[i, j] = round_to_saaty(val)
                 Mp[j, i] = 1.0 / Mp[i, j]
